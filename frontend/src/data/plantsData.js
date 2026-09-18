@@ -11,7 +11,7 @@ export const CATEGORIES = [
   },
   {
     id: "ornamental",
-    name: "Ornamental Plants",
+    name: "Potted Plants",
     shortName: "Ornamental",
     description: "Vibrant foliage, architectural shrubs, and colorful landscape species.",
     image: "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=800&q=80",
@@ -76,7 +76,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Garden Borders, Commercial Walkways, Farmhouse Landscaping",
     description: "Stunning broad leaves bursting with vibrant tones of scarlet red, gold, orange, and deep forest green. One of our signature ornamental cultivars nurtured in Kadiyam soil.",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=80",
+    image: "https://plantshub.in/wp-content/uploads/2024/03/9f944655-be9e-48b1-9994-959353221eec-1.webp",
     features: ["Intense year-round color", "Dense architectural foliage", "Exceptional landscape contrast"]
   },
   {
@@ -94,7 +94,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Estate Boundaries, Poolside Accents, Tropical Theme Gardens",
     description: "Deep burgundy foliage with sensational neon-pink margins. Excellent for creating dramatic focal points in residential and commercial landscape layouts.",
-    image: "https://images.unsplash.com/photo-1599685315640-9ceab2f58944?auto=format&fit=crop&w=900&q=80",
+    image: "https://nurserynisarga.in/wp-content/uploads/2025/02/blue-daimond-medium.webp",
     features: ["Vibrant magenta & bronze leaves", "Hardy tropical grower", "High landscape curb appeal"]
   },
   {
@@ -148,7 +148,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Villa Entrances, Mass Border Planting, Shaded Garden Beds",
     description: "Luminous neon-chartreuse foliage that brightens shady landscaping corners. Grown on sturdy moss poles and root balls in Kadiyam.",
-    image: "https://images.unsplash.com/photo-1615211011116-2a781b0f55cf?auto=format&fit=crop&w=900&q=80",
+    image: "https://unlimitedgreens.com/cdn/shop/files/IMG_4035.jpg?v=1752743183",
     features: ["Electrifying chartreuse color", "Rapid root vigor", "Excellent mass planting choice"]
   },
 
@@ -168,7 +168,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Highway Avenues, Grand Villa Drives, Government Projects, Resorts",
     description: "The monarch of architectural palms. Massive smooth marble-like grayish-white trunks with vibrant crownshafts. Available in root-balled specimen sizes ready for highway and estate transplanting.",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=900&q=80",
+    image: "https://rknurserygarden.com/wp-content/uploads/2025/06/PALM-600x693.webp",
     features: ["Architectural imperial trunk", "Specimen caliper girth", "Ideal for major civil & real estate projects"]
   },
   {
@@ -186,7 +186,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Corporate Campuses, Gated Community Avenues, Farmhouse Lawns",
     description: "Celebrated for its plush, bushy fronds that resemble a fox's tail. Self-cleaning trunk and high resistance to coastal winds and warm climates.",
-    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=80",
+    image: "https://m.media-amazon.com/images/I/61D8O6POv3L.jpg",
     features: ["Plush plumose fronds", "Self-cleaning trunk", "High wind and drought tolerance"]
   },
   {
@@ -204,7 +204,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Perimeter Screening, Privacy Hedges, Commercial Atriums, Villas",
     description: "Dense multi-caned golden-green clumping palms offering immediate natural privacy and lush tropical aesthetics. High inventory available for wholesale orders.",
-    image: "https://images.unsplash.com/photo-1598880940371-c756e015fea1?auto=format&fit=crop&w=900&q=80",
+    image: "https://buyfromcostarica.com/wp-content/uploads/2023/06/r__s_ornamentales_Chrysalidocarpus_lutescens__palma_areca_producto_2.jpg",
     features: ["Lush dense multi-stem clusters", "Natural privacy screen", "High oxygen emission"]
   },
   {
@@ -222,7 +222,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Resort Lawns, Roundabouts, Monumental Landscaping, Luxury Villas",
     description: "Unmatched dramatic appeal with huge silvery-blue fan-shaped fronds spanning up to 8 feet across. One of the most sought-after architectural centerpiece palms.",
-    image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
+    image: "https://acaciagardencenter.com/cdn/shop/files/bismarck-palm-bismarckia-nobilis-20-25-m-70-80-cm-clear-trunk-5137010.webp?v=1778008405&width=5000",
     features: ["Iconic silver-blue fan fronds", "Spectacular visual centerpiece", "Extremely heat tolerant"]
   },
   {
@@ -240,7 +240,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Rock Gardens, Entrance Urns, Formal Lawns, Courtyards",
     description: "Ancient prehistoric cycad featuring a sturdy textured woody trunk crowned with stiff symmetrical glossy-green feathery leaves. Slow-grown and hardened in Kadiyam.",
-    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=80",
+    image: "https://malaszklarnia.pl/wp-content/uploads/2026/04/ms6_1k_0115_0523szklarnia-115.webp",
     features: ["Aged woody specimen trunks", "Symmetrical rosette crowns", "Virtually pest-free"]
   },
 
@@ -260,7 +260,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Flowering Hedges, Garden Borders, Temple Gardens, Balconies",
     description: "Acclaimed hybrid varieties producing dinnerplate-sized blooms in fiery red, apricot, dual-tone orange, and sunshine yellow. Robust rootstock bred for continuous flowering.",
-    image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=900&q=80",
+    image: "https://nurserylive.com/cdn/shop/files/hibiscus-red.jpg?crop=center&height=646&v=1751758880&width=646",
     features: ["Prolific year-round blooming", "Extra-large vibrant flowers", "Durable Kadiyam hybrid rootstock"]
   },
   {
@@ -278,7 +278,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Boundary Walls, Highway Dividers, Pergolas, Arches, Trellises",
     description: "Staggering floral density with shades of magenta, cherry red, white, yellow, and bi-color. High inventory ready for infrastructure and highway greening tenders.",
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=900&q=80",
+    image: "https://tse3.mm.bing.net/th/id/OIP.abxg46QYA_PyYv77_ACnGwHaJ4?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
     features: ["Explosive seasonal color", "Extreme heat & drought hardiness", "Standard choice for highway projects"]
   },
   {
@@ -296,7 +296,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Formal Hedge Borders, Pathway Edging, Municipal Landscaping",
     description: "Compact woody shrub adorned with tight umbrella clusters of bright scarlet, coral, and canary yellow florets. Retains lush green foliage throughout the year.",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=900&q=80",
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/12/372345620/JU/HL/FX/104011208/ixora-tall-250x250.jpg",
     features: ["Dense ball-shaped bloom clusters", "Neat hedge-forming habit", "Resistant to heavy pruning"]
   },
   {
@@ -314,7 +314,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Avenue Borders, Municipal Parks, Screening Hedges",
     description: "Fast-growing shrub producing heavy pendulous clusters of bright golden trumpet flowers. Extremely resilient, perfect for government plantation tenders.",
-    image: "https://images.unsplash.com/photo-1596728325488-8255474384d0?auto=format&fit=crop&w=900&q=80",
+    image: "https://mobileimages.lowes.com/productimages/e16e8caf-6097-42ff-99be-1a143094a28e/66951127.jpeg?size=pdhism",
     features: ["Cascades of golden trumpets", "Rapid growth rate", "Attracts pollinators and butterflies"]
   },
   {
@@ -332,7 +332,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Resort Patios, Temple Grounds, Villa Focal Points",
     description: "Sculptural thick branches bearing fragrant white blossoms with deep golden-yellow centers. Emits an intoxicating evening perfume.",
-    image: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=900&q=80",
+    image: "https://acaciagardencenter.com/cdn/shop/files/frangipani-plumeria-obtusa-specimen-30-35-m-35-40-cm-girth-5102575.webp?v=1778008642&width=5000",
     features: ["Intensely fragrant blossoms", "Architectural branching structure", "Thrives in tropical heat"]
   },
 
@@ -462,7 +462,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Study Table, Office Credenza, Feng Shui Accents",
     description: "Fleshy miniature jade leaves on thick woody gnarled reddish-brown trunks. Symbolizes good fortune, resilience, and vitality.",
-    image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
+    image: "https://a-z-animals.com/media/2022/12/Shutterstock_1877993242-1024x794.jpg",
     features: ["Thick aged succuluent trunk", "Symbol of financial fortune", "Very forgiving of missed waterings"]
   },
   {
@@ -480,7 +480,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Terrace Collections, Courtyards, Botanical Showpieces",
     description: "Trained hardwood trunk with dramatic deadwood jin effects, blanketed in brilliant magenta-pink or coral-orange blooms. A true masterwork.",
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=900&q=80",
+    image: "https://tse3.mm.bing.net/th/id/OIP.abxg46QYA_PyYv77_ACnGwHaJ4?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
     features: ["Dramatic flowering canopy", "Weathered hardwood trunk", "High horticultural value"]
   },
   {
@@ -498,7 +498,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Art Collector Desks, Luxury Interior Accents",
     description: "Tiny lustrous dark green leaves studded with dainty star-shaped white blossoms that give way to miniature red berries.",
-    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=80",
+    image: "https://bonsai-en.com.au/cdn/shop/articles/Untitled_design_-_2023-01-10T113125.663-398775.jpg?v=1673512185",
     features: ["Delicate year-round white blooms", "Miniature shiny foliage", "Classic Oriental bonsai style"]
   },
 
@@ -518,7 +518,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Commercial Orchards, Farmhouses, Residential Backyards",
     description: "Renowned Andhra GI mango variety. Grafted onto vigorous indigenous rootstock in our Kadiyam nursery, ensuring authentic sweetness, fibreless pulp, and early commercial bearing.",
-    image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=900&q=80",
+    image: "https://shrigramorganics.com/wp-content/uploads/2022/08/mango-malda-grafted-plant-1559703105_p_2765580_941344_79af28d5-05ca-4814-8b41-73e3af702b3e-1.jpg",
     features: ["Authentic GI mother plant genetics", "Early fruiting grafted stock", "High commercial market demand"]
   },
   {
