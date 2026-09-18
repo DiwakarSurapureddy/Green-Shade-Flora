@@ -140,7 +140,7 @@ export const IndoorOutdoor = ({ onAskAI }) => {
             <table className="comparison-table">
               <thead>
                 <tr>
-                  <th>Botanical Feature</th>
+                  <th>Plant Feature</th>
                   <th>Indoor Plants 🪴</th>
                   <th>Outdoor Plants 🌳</th>
                   <th>Advantage</th>
