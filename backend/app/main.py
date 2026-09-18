@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 from app.config import APP_NAME, DEBUG, UPLOADS_DIR, GALLERY_UPLOADS_DIR
 from app.seed_data import seed_database
-from app.routes import plants_router, orders_router, inquiries_router, gallery_router, reviews_router, auth_router
+from app.routes import plants_router, orders_router, inquiries_router, gallery_router, reviews_router, auth_router, chatbot_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -45,6 +45,7 @@ app.include_router(inquiries_router)
 app.include_router(gallery_router)
 app.include_router(reviews_router)
 app.include_router(auth_router)
+app.include_router(chatbot_router)
 
 @app.get("/api/health", tags=["Health"])
 def health_check():

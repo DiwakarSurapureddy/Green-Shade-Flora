@@ -4,6 +4,16 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
 
 export const api = {
+  async chat(message) {
+    const response = await fetch(`${API_BASE_URL}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+    if (!response.ok) throw new Error(`Server returned ${response.status}`);
+    return response.json();
+  },
+
   // Submit Customer Inquiry to PostgreSQL Database
   async submitInquiry(inquiryData) {
     try {
