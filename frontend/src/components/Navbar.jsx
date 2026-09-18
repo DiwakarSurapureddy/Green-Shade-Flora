@@ -1,173 +1,193 @@
-import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import {
-  Leaf,
-  Layers,
-  HeartHandshake,
-  Info,
-  LogIn,
-  LogOut,
-  Menu,
-  X,
-  Sparkles,
-  User,
-  ShoppingBag
+import React, { useState, useEffect } from 'react';
+import { useGreenCart } from '../context/GreenCartContext';
+import { BUSINESS_INFO } from '../data/plantsData';
+import { 
+  Sprout, 
+  Menu, 
+  X, 
+  Send, 
+  PhoneCall, 
+  Compass, 
+  Info, 
+  Layers, 
+  Mail,
+  MapPin
 } from 'lucide-react';
 
-export const Navbar = ({ activePage, setActivePage }) => {
-  const { user, isAuthenticated, logout } = useAuth();
+export const Navbar = ({ activePage, setActivePage, onOpenAdmin }) => {
+  const { totalCount, varietyCount, openCart, openInquiry } = useGreenCart();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { id: 'home', label: 'Home', icon: Leaf },
-    { id: 'types', label: 'Plant Types', icon: Layers },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'care', label: 'Plant Care', icon: HeartHandshake },
-    { id: 'order', label: 'Order', icon: ShoppingBag }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { id: 'home', label: 'Home' },
+    { id: 'plants', label: 'Plants' },
+    { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
+    { id: 'contact', label: 'Contact' }
   ];
 
-  const handleNavClick = (pageId) => {
-    setActivePage(pageId);
-    setMobileMenuOpen(false);
+  const handleNavClick = (link) => {
+    setActivePage(link.id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
   };
 
   return (
-    <header className="header-nav">
-      <div className="container">
-        <div className="nav-inner">
-          {/* Logo */}
-          <div
-            className="brand-logo"
-            onClick={() => handleNavClick('home')}
-            style={{ cursor: 'pointer' }}
-          >
-            <div className="logo-leaf-icon">
-              <Leaf size={22} />
+    <>
+      {/* Top Heritage & Contact Bar */}
+      <div className="top-utility-bar">
+        <div className="container utility-content">
+          <div className="utility-left">
+            <span className="heritage-badge">🌿 Est. 1997 • 29+ Years Horticultural Heritage</span>
+            <span className="hub-tag">
+              <MapPin size={12} /> Kadiyapu Savaram, Andhra Pradesh
+            </span>
+          </div>
+          <div className="utility-right">
+            <a 
+              href={`tel:${BUSINESS_INFO.alternatePhoneRaw}`} 
+              className="utility-link"
+              title="Call Green Shade Nursery Desk"
+            >
+              <PhoneCall size={12} /> {BUSINESS_INFO.whatsappPhone}
+            </a>
+            <span className="utility-divider">|</span>
+            <span className="operating-text">Mon–Sat: 7AM–8PM • Sun: 8AM–7PM</span>
+            {onOpenAdmin && (
+              <>
+                <span className="utility-divider">|</span>
+                <button
+                  type="button"
+                  onClick={onOpenAdmin}
+                  className="utility-admin-link"
+                  title="Open Nursery Desk (PostgreSQL Inquiries)"
+                >
+                  📋 Nursery Desk
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <header className={`main-navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+        <div className="container nav-inner">
+          {/* Brand Logo */}
+          <div className="nav-brand" onClick={() => { setActivePage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+            <div className="brand-leaf-icon">
+              <Sprout size={24} />
             </div>
-            <span>Green Shade Flora</span>
+            <div className="brand-text-block">
+              <div className="brand-title">GREEN SHADE NURSERY</div>
+              <div className="brand-subtitle">
+                <span>ESTABLISHED 1997</span>
+                <span className="dot-sep">•</span>
+                <span>KADIYAM SAVARAM</span>
+              </div>
+            </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <ul className="nav-links-desktop">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = activePage === item.id;
-              return (
-                <li key={item.id}>
-                  <button
-                    className={`nav-item-link ${isActive ? 'active' : ''}`}
-                    onClick={() => handleNavClick(item.id)}
-                  >
-                    <Icon size={16} />
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span
-                        style={{
-                          fontSize: '0.68rem',
-                          background: 'linear-gradient(135deg, #2d6a4f, #52b788)',
-                          color: 'white',
-                          padding: '1px 6px',
-                          borderRadius: '999px',
-                          fontWeight: 800
-                        }}
-                      >
-                        {item.badge}
-                      </span>
-                    )}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Right Action Buttons: Auth */}
-          <div className="nav-actions-right">
-            {isAuthenticated ? (
-              <div className="user-badge-nav">
-                <div className="user-avatar-circle">
-                  {user?.avatar || '🌿'}
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span className="user-name-text">{user?.name}</span>
-                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-                    {user?.role || 'Gardener'}
-                  </span>
-                </div>
-                <button
-                  className="btn-logout-tiny"
-                  onClick={logout}
-                  title="Log out of account"
-                >
-                  <LogOut size={14} />
-                  <span>Exit</span>
-                </button>
-              </div>
-            ) : (
+          <nav className="desktop-nav-links" aria-label="Main Navigation">
+            {navLinks.map((link) => (
               <button
-                className="btn-nav-unique-auth"
-                onClick={() => handleNavClick('login')}
-                aria-label="Sign in to your account"
+                key={link.id}
+                type="button"
+                className={`nav-link-btn ${activePage === link.id ? 'active' : ''}`}
+                onClick={() => handleNavClick(link)}
               >
-                <User size={15} />
-                <span>Sign In</span>
+                {link.label}
               </button>
-            )}
+            ))}
+          </nav>
 
-            {/* Mobile Hamburger Toggle */}
+          {/* Right Action Controls */}
+          <div className="nav-right-actions">
+            {/* Green Cart Trigger Icon Button */}
             <button
-              className="btn-hamburger"
+              type="button"
+              className="btn-nav-cart"
+              onClick={openCart}
+              title="Open Green Cart"
+              aria-label={`Green Cart with ${totalCount} plants`}
+            >
+              <div className="cart-btn-icon-wrap">
+                <span className="cart-leaf-glyph">🌿</span>
+              </div>
+              <div className="cart-btn-text-wrap">
+                <span className="cart-btn-title">Green Cart</span>
+                <span className="cart-btn-count-text">
+                  {totalCount === 0 ? '0 Plants' : `${totalCount} Plants`}
+                </span>
+              </div>
+              {totalCount > 0 && (
+                <span className="cart-floating-badge">{totalCount}</span>
+              )}
+            </button>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              className="mobile-hamburger-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
+              aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="mobile-nav-drawer">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activePage === item.id;
-            return (
-              <button
-                key={item.id}
-                className={`nav-item-link ${isActive ? 'active' : ''}`}
-                style={{ width: '100%', justifyContent: 'flex-start', padding: '12px 16px' }}
-                onClick={() => handleNavClick(item.id)}
-              >
-                <Icon size={18} />
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu-drawer">
+            <div className="mobile-menu-inner container">
+              <div className="mobile-links-stack">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.id}
+                    type="button"
+                    className={`mobile-link-item ${activePage === link.id ? 'active' : ''}`}
+                    onClick={() => handleNavClick(link)}
+                  >
+                    <span>{link.label}</span>
+                    {link.isCartAction && totalCount > 0 && (
+                      <span className="mobile-cart-badge">{totalCount} items</span>
+                    )}
+                  </button>
+                ))}
+              </div>
 
-          <div style={{ paddingTop: '12px', borderTop: '1px solid var(--border-subtle)' }}>
-            {isAuthenticated ? (
-              <button
-                className="btn-secondary"
-                style={{ width: '100%', justifyContent: 'center' }}
-                onClick={logout}
-              >
-                <LogOut size={16} />
-                <span>Log Out ({user?.name})</span>
-              </button>
-            ) : (
-              <button
-                className="btn-nav-unique-auth"
-                style={{ width: '100%', justifyContent: 'center' }}
-                onClick={() => handleNavClick('login')}
-              >
-                <User size={15} />
-                <span>Sign In</span>
-              </button>
-            )}
+              <div className="mobile-drawer-bottom">
+                <div className="mobile-hours-card">
+                  <p><strong>Founder:</strong> Surapureddy Rama Krishna</p>
+                  <p><strong>Location:</strong> Kadiyapu Savaram, AP</p>
+                  <p><strong>Phone:</strong> {BUSINESS_INFO.whatsappPhone}</p>
+                </div>
+                <button
+                  type="button"
+                  className="btn-primary full-width"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openInquiry();
+                  }}
+                >
+                  Send Plant Inquiry
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 };

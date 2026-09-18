@@ -249,7 +249,7 @@ export const PlantCare = ({ onAskAI }) => {
 
               <div>
                 <img
-                  src="https://images.unsplash.com/photo-1593691509543-c55fb32a36d5?auto=format&fit=crop&w=800&q=80"
+                  src="https://tse3.mm.bing.net/th/id/OIP.PuAuFNZQyRQ7ckaKbNA76gHaLI?r=0&cb=thfc1falcon&w=800&h=1202&rs=1&pid=ImgDetMain&o=7&rm=3"
                   alt="Snake Plant Interior"
                   style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-md)' }}
                 />
