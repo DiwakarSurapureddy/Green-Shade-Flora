@@ -9,6 +9,8 @@ import { PlantTypes } from './pages/PlantTypes';
 import { SearchPlants } from './pages/SearchPlants';
 import { PlantCare } from './pages/PlantCare';
 import { IndoorOutdoor } from './pages/IndoorOutdoor';
+import { About } from './pages/About';
+import { Order } from './pages/Order';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 
@@ -32,6 +34,11 @@ export const App = () => {
         return <PlantCare onAskAI={handleAskAI} />;
       case 'compare':
         return <IndoorOutdoor onAskAI={handleAskAI} />;
+      case 'about':
+        return <About />;
+      case 'order':
+      case 'orders':
+        return <Order />;
       case 'login':
         return <Login setActivePage={setActivePage} />;
       case 'signup':
@@ -52,7 +59,7 @@ export const App = () => {
           {renderActivePage()}
         </main>
 
-        {/* Floating AI Botanical Assistant */}
+        {/* Floating AI Plant Assistant */}
         <ChatBot
           externalPrompt={externalPrompt}
           onClearExternalPrompt={() => setExternalPrompt(null)}

@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import { Sun, Droplets, Sparkles, ArrowUpRight, X, Heart, ShieldCheck, Thermometer } from 'lucide-react';
+import { Sun, Droplets, Sparkles, ArrowUpRight, X, Heart, ShieldCheck, Thermometer, ShoppingBag, Check } from 'lucide-react';
 
 export const PlantCard = ({ plant, onAskAI }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [liked, setLiked] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 2200);
+  };
+
+  const discountPercent = plant.originalPrice && plant.price
+    ? Math.round(((plant.originalPrice - plant.price) / plant.originalPrice) * 100)
+    : null;
 
   return (
     <>
@@ -11,6 +22,26 @@ export const PlantCard = ({ plant, onAskAI }) => {
         <div className="card-img-wrap" onClick={() => setModalOpen(true)} style={{ cursor: 'pointer' }}>
           <img src={plant.image} alt={plant.name} loading="lazy" />
           <span className="card-tag-badge">{plant.type}</span>
+
+          {discountPercent > 0 && (
+            <span
+              style={{
+                position: 'absolute',
+                bottom: '12px',
+                left: '12px',
+                background: 'rgba(36, 77, 51, 0.92)',
+                color: '#ffffff',
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                padding: '3px 8px',
+                borderRadius: '6px',
+                letterSpacing: '0.02em'
+              }}
+            >
+              {discountPercent}% OFF
+            </span>
+          )}
+
           <button
             style={{
               position: 'absolute',
@@ -25,7 +56,9 @@ export const PlantCard = ({ plant, onAskAI }) => {
               alignItems: 'center',
               justifyContent: 'center',
               color: liked ? '#e03131' : '#4a5d52',
-              transition: 'all 0.2s'
+              transition: 'all 0.2s',
+              border: 'none',
+              cursor: 'pointer'
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -59,6 +92,61 @@ export const PlantCard = ({ plant, onAskAI }) => {
             </span>
           </div>
 
+          {/* Professional Indian Rupee Price Section */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              margin: '12px 0 14px',
+              paddingTop: '10px',
+              borderTop: '1px dashed var(--border-subtle)'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+              <span style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+                ₹{plant.price}
+              </span>
+              {plant.originalPrice && (
+                <span style={{ fontSize: '0.86rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
+                  ₹{plant.originalPrice}
+                </span>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={handleAddToCart}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '5px 12px',
+                background: addedToCart ? '#2b8a3e' : 'var(--primary-green)',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '0.8rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'all 0.2s'
+              }}
+              title="Add to nursery order"
+            >
+              {addedToCart ? (
+                <>
+                  <Check size={13} />
+                  <span>Added</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingBag size={13} />
+                  <span>Order</span>
+                </>
+              )}
+            </button>
+          </div>
+
           <div className="card-footer">
             <button
               className="btn-card-action"
@@ -79,7 +167,9 @@ export const PlantCard = ({ plant, onAskAI }) => {
                   fontWeight: 700,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  border: 'none',
+                  cursor: 'pointer'
                 }}
                 onClick={() => onAskAI(`Tell me how to take care of ${plant.name} at home`)}
               >
@@ -116,6 +206,24 @@ export const PlantCard = ({ plant, onAskAI }) => {
                 <p style={{ fontStyle: 'italic', color: 'var(--primary-light)', marginBottom: '12px' }}>
                   {plant.botanicalName}
                 </p>
+
+                {/* Price highlight in modal */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+                    ₹{plant.price}
+                  </span>
+                  {plant.originalPrice && (
+                    <span style={{ fontSize: '1rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
+                      ₹{plant.originalPrice}
+                    </span>
+                  )}
+                  {discountPercent > 0 && (
+                    <span style={{ background: '#eef8f2', color: '#2b8a3e', fontSize: '0.78rem', fontWeight: 700, padding: '2px 8px', borderRadius: '6px' }}>
+                      {discountPercent}% OFF • Nursery Price
+                    </span>
+                  )}
+                </div>
+
                 <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
                   {plant.description}
                 </p>
@@ -177,7 +285,16 @@ export const PlantCard = ({ plant, onAskAI }) => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', flexWrap: 'wrap' }}>
+              <button
+                className="btn-secondary"
+                onClick={handleAddToCart}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+              >
+                {addedToCart ? <Check size={16} /> : <ShoppingBag size={16} />}
+                <span>{addedToCart ? 'Added to Order!' : `Order for ₹${plant.price}`}</span>
+              </button>
+
               {onAskAI && (
                 <button
                   className="btn-primary"

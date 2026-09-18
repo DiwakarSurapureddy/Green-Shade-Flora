@@ -25,7 +25,7 @@ export const Home = ({ setActivePage, onAskAI }) => {
             <div>
               <div className="hero-tagline">
                 <Sparkles size={16} />
-                <span>Premier Botanical Education & AI Care</span>
+                <span>Kadiam Premier Nursery</span>
               </div>
 
               <h1 className="hero-title">
@@ -81,7 +81,7 @@ export const Home = ({ setActivePage, onAskAI }) => {
             <div className="hero-image-card">
               <img
                 src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=1200&q=80"
-                alt="Lush Botanical Interior"
+                alt="Lush Plant Interior"
               />
               <div className="hero-glass-pill">
                 <div className="pill-icon-glow">
@@ -89,7 +89,7 @@ export const Home = ({ setActivePage, onAskAI }) => {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1.05rem', color: 'var(--primary-forest)' }}>
-                    Healthy Botanical Living
+                    Healthy Plant Living
                   </h4>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
                     Indoor plants reduce airborne dust & boost focus by 20%
@@ -130,7 +130,7 @@ export const Home = ({ setActivePage, onAskAI }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <span>Browse All Botanical Categories</span>
+              <span>Browse All Plant Categories</span>
               <ArrowRight size={16} />
             </button>
           </div>
@@ -175,7 +175,7 @@ export const Home = ({ setActivePage, onAskAI }) => {
               </div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '10px' }}>Medicinal Healing</h3>
               <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
-                Botanicals like Tulsi and Aloe Vera provide immediate, natural at-home remedies for coughs, respiratory support, and skincare.
+                Plants like Tulsi and Aloe Vera provide immediate, natural at-home remedies for coughs, respiratory support, and skincare.
               </p>
             </div>
 

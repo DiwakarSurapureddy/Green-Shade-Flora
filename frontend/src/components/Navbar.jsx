@@ -3,14 +3,15 @@ import { useAuth } from '../context/AuthContext';
 import {
   Leaf,
   Layers,
-  Search,
   HeartHandshake,
-  ArrowLeftRight,
+  Info,
   LogIn,
   LogOut,
   Menu,
   X,
-  Sparkles
+  Sparkles,
+  User,
+  ShoppingBag
 } from 'lucide-react';
 
 export const Navbar = ({ activePage, setActivePage }) => {
@@ -20,9 +21,9 @@ export const Navbar = ({ activePage, setActivePage }) => {
   const navItems = [
     { id: 'home', label: 'Home', icon: Leaf },
     { id: 'types', label: 'Plant Types', icon: Layers },
-    { id: 'search', label: 'Search & AI', icon: Search, badge: 'AI' },
+    { id: 'about', label: 'About', icon: Info },
     { id: 'care', label: 'Plant Care', icon: HeartHandshake },
-    { id: 'compare', label: 'Indoor vs Outdoor', icon: ArrowLeftRight }
+    { id: 'order', label: 'Order', icon: ShoppingBag }
   ];
 
   const handleNavClick = (pageId) => {
@@ -104,11 +105,12 @@ export const Navbar = ({ activePage, setActivePage }) => {
               </div>
             ) : (
               <button
-                className="btn-nav-signup"
+                className="btn-nav-unique-auth"
                 onClick={() => handleNavClick('login')}
+                aria-label="Sign in to your account"
               >
-                <LogIn size={15} />
-                <span>Log In / Sign Up</span>
+                <User size={15} />
+                <span>Sign In</span>
               </button>
             )}
 
@@ -155,12 +157,12 @@ export const Navbar = ({ activePage, setActivePage }) => {
               </button>
             ) : (
               <button
-                className="btn-nav-signup"
+                className="btn-nav-unique-auth"
                 style={{ width: '100%', justifyContent: 'center' }}
                 onClick={() => handleNavClick('login')}
               >
-                <LogIn size={15} />
-                <span>Log In / Sign Up</span>
+                <User size={15} />
+                <span>Sign In</span>
               </button>
             )}
           </div>

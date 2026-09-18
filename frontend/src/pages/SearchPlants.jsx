@@ -65,7 +65,7 @@ export const SearchPlants = ({ onAskAI }) => {
       <section className="section section-soft" style={{ padding: '60px 0 40px' }}>
         <div className="container">
           <div className="section-header-center" style={{ marginBottom: '32px' }}>
-            <span className="section-badge">Live Botanical Search</span>
+            <span className="section-badge">Live Plant Search</span>
             <h1 className="section-title">Smart Plant Finder & AI Advisor</h1>
             <p className="section-desc">
               Filter our species database by room lighting, watering frequency, or care difficulty — or ask PlantMate AI for custom guidance.
