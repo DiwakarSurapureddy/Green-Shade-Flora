@@ -1,2 +1,76 @@
+# Environment variables and local secrets
 .env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Node.js dependencies and build output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+frontend/dist/
+frontend/.vite/
+server/dist/
+dist/
+
+# Python environments, caches, and test output
+.venv/
+venv/
+env/
+ENV/
 __pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+
+# RAG and AI-generated local artifacts
+.chroma/
+chroma_db/
+chromadb/
+vectorstore/
+vector_store/
+embeddings/
+faiss.index
+*.faiss
+*.pkl
+*.pickle
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# Local databases and runtime files
+*.db
+*.sqlite
+*.sqlite3
+instance/
+uploads/
+logs/
+*.log
+
+# Editor and operating-system files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
