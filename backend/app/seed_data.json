@@ -1,0 +1,803 @@
+{
+  "plants": [
+    {
+      "id": "Snake Plant",
+      "name": "Snake Plant",
+      "cat": "Indoor",
+      "emoji": "🌿",
+      "price": 450,
+      "bulk": 380,
+      "rating": 4.9,
+      "reviews": 234,
+      "image": "https://tse3.mm.bing.net/th/id/OIP.PuAuFNZQyRQ7ckaKbNA76gHaLI?r=0&cb=thfc1falcon&w=800&h=1202&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "The iconic split-leaf Monstera is the ultimate statement houseplant. Native to tropical rainforests, it thrives in bright indirect light and requires minimal watering. Perfect for living rooms and offices.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Weekly",
+        "Soil": "Well-draining mix",
+        "Humidity": "High (60%+)"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Bestseller",
+      "seasonal": []
+    },
+    {
+      "id": "Bougainvillea",
+      "name": "Bougainvillea (Paper Flower)",
+      "cat": "Flower",
+      "emoji": "🌹",
+      "price": 180,
+      "bulk": 140,
+      "rating": 4.8,
+      "reviews": 412,
+      "image": "https://tse3.mm.bing.net/th/id/OIP.abxg46QYA_PyYv77_ACnGwHaJ4?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "Classic red hybrid roses ideal for gardens, balconies, and gifting. Our grafted varieties bloom 3–4 times per year with proper care. Includes care instructions and initial fertilizer.",
+      "care": {
+        "Light": "Full sun (6+ hrs)",
+        "Water": "Daily",
+        "Soil": "Rich loamy soil",
+        "Fertilizer": "Monthly"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Popular",
+      "seasonal": [
+        "winter"
+      ]
+    },
+    {
+      "id": "rose",
+      "name": "Rose",
+      "cat": "Flower",
+      "emoji": "🌸",
+      "price": 120,
+      "bulk": 90,
+      "rating": 5,
+      "reviews": 567,
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEBIVFRUXFRUVFxUWFxcYFRUVFRUXFhYVFRYYHSggGBolGxUWITEhJSkrLi4uFx8zODMtNygtLysBCgoKDg0OGhAQGC0gHSUtLS4tLy0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLTctLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xAA+EAACAQIEAwUFBQcEAgMAAAABAgADEQQSITEFBkETIlFhcTJCgZGhFFKxwdEHFSMzcoLwJEOS4WKyFlNz/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAJhEAAgICAgICAgIDAAAAAAAAAAECEQMhEjETQQRRBWEicRQyof/aAAwDAQACEQMRAD8A7bBM/gObaD6Pemf/AC2/5CXtKsrC6sCPEG8aafQuhcEEEYgQQQQAYx38tvSZwCaTG+w3pM6Jhl7NIBRJioRmJoFCMOFAAjChmFEAmFFGFAAoVoqEYDEwjDgiATCijCgMKFDgiAKAQGEImMVBAIIhgggggBkuE0q1ZWY0yuVihvtcb6yZRq1qJuhZD5bfoZt+TkHY1FI/363/ALX/ADllieEUX3QA+I0nWsXtM53P7MngOcKq6VVDjxGjfpNHgeY8PV0z5T4Nof0MiV+VKZ2/7+YlPjuVGXWnc+R1jucf2FRf6NyrA7G8Oc2p1cThz3Sw8t1+RlxgucSNKyfFf0MayL2Jwfo1eM9hvQzJcT4jTw9M1KrWHQaXY2JyqDuTaXg45QqoctQXtsdD8jOS89Vi9dhZsqZFsCSLEXDqu2oa2l9oSSkz0Pxfw18nLxk6S2y9xfP2GUgKtSoCLkqAMp8CGI+e3nKXE/tEfO3ZUVKnLkzHVbXzlsu99PS0xXEQg6sAdLNofULvI6VwpF7gAeFz6+XxkcUe+vgfExypxv8AtnUuE87Uin+qIRr2DKpyNfwFyVIsb302t4TWXnn1sUvXM2nlYf8Ac3vIvMWKepSwzhXQh3LkkuqKuii5+9l8failH2jzfnfCxq54dL2jokEEEzPHCvCggiAKEYZibwABgjS4hSxW/eHQ6He1x4i/WYxecqwxfZVqa06Qcq2YNnVRezk366Ha2sDfB8eea+HrZtzEzFcS/aFSIIwysWDe0wAUjxte+/kNI7yjza1dhRrr3yTldRow7zWYe7YC1+sDb/Az+PyVo2EEEERyBGAQWgiGHDhCHJGHBBBAB/l3iXZ1ewKH+K71A3QX1IPymtnOeG1m+10De+rDXzBnQRVPhO7G7RyzpMdgiBVEUHHjNCButhkfRlB9RKrGctUX2GU+UuoImkxowfFOUqigtTYGwO+85VxXFuXdapKupylhp7JtbXp1novGew3oZy3nXgdOrTLoirWuO/axOlrMRuJk6gz1/wAV82OCT5q0/f0cuyAXKBTb/cc3HmQJF3N7ZupbZSfQmWdXlTGXN8hAvqWsCB1sBLjE8j2wgq1aj51yu6JYKtMkdoBcEswFzfbSS5o9LN+QxVf/AAxdbGkkaAW2tpOtfs14IaNH7RVFqlYCwtqlIHuj1b2j5ZfCZ/hjcFw6GlWyV3BYGoEqPmsxsbi6qdB7JtYjzkiv+0Z1YCjh07MABczMWIA01GgPlrFJtnkfI+c8kas6VBMvyzznRxZFNgaVXopNw/8AQ2mvkQD4XmnvMzkTvoOFBeE0QyDxTjNDDi9eqqX2B1Y+ii5PwE5/zHzdU7cVMFiD2WUDLlIs4JvmR1uQRbXylPznwtsPiWDVO0z98MSS+UkgB77EWI8wJR0/OFmUpPovuIcx1sTUBysHC2UUs173ZmK2uRv9JE5n4gztTeqb1GoU8xHU95Te2xsBeS+UeEYmpXWph+7kJPaEHIpsRY+OhPdH03llztwPUvWIVyhcOg/h1GUgMuU6oxzX62sTrc2FpnV8PP4Z8310YM4g6ZfG/wD3OxclcvijSStU1qugNulNWF7AeJG5+E5lw3g7OyBsop6MS+fK43sWRSQp8ht1E6ySaNINjcQqrb/bJQFjrow77G97BbaW0lyOnN85tOEJafZeQTIYjnektlo0nqD7ztl0+N2PqYrDc7qf5lBh5o4b6MB+MXBnn+WP2a2FIeA4rRrD+G4J+7s3/E6yZIaLTT6DhxMVJZQIIIIhlTgD/qaH9R/OdDnDOWsfUzFsxJQ3F9bTt+GqZkVj1APznZh9o5MiHICIIJsZhQZz4wQjABOIqEqR5TDcXckW/wAuJuKmxnP+YcUEB1F9bA9T0Exyo0xydlbjMbTpUhUrNYfMk30AHWZ+vxSvxCm+HoKEBYW7xBcAEsrHYDY/C0icw8MISkzMXZsxdje19LKo6KNZoORMDlDPbYBR6tq34D5zKKSXIqU25cTPclcuUa2IdK4JNG+ek3d72cqo0JLCy3Ow1G433nG+VsNiUCMgQqLI6AAqOgI2ZfI/SRkHZcS0FhiMNc+dTDuBf1yVB8po5LbKSXRyHifK2Jw9RVcXpl0VcQl7C7AAtbVSN9fDQmddw6sqqHbMwADMBlzEDU2ubX8LxR13hwbsFGg7wQoIiir4py9hcQ2evSDNa2a7KbDYXUiQsVy1h6dGp9mw6dpkYId2Bt7rOTYzQxJgKrMf+zyrXArUqoYJSKBVYEMpbMSLHpYCP8+0DVXD0UUM9StYAmwyhbvc9Ba1z5S04liaeHqitUYKjIabE/eXvU9BubGoPjMvxTmNWxNOvTQstJXCh+7dnBUsLX907RRg5KkZyaiqbIvFGSnUKFi1Vf5llC0RYAKlO21hpa225vI+Jwb4t6dMMTkTKq3uBa1zqQBoAPQSLjMQMRVeolNlGjFb5st7Atfci+5tpml/y5g+yqCviCtFRfKKhCs5YFb2NiFsT66To/1jRklctB4bkdrd+sAfALcfFrj8JIp8mEb1F+TH8xNVQxCVBmpsrr4qQR8xFzLnI6PFD6Knh3L9KkbnvsNriyg+IXx9SZbwochtvs0jFLSDhiJihJZQcEEOIZiuDcIRKiLc2d7H0vOtIwUBRsBacxp1LPSI6Nf6zomEqBt51Yn2c090S2rAQzVFryvx417pkRadVxpNbMmn9Fk/EFEL94AyjxVF09qWGEp90GVZmm7JZxgIM5hzfhKrVLgXWdIrNYbTKcaFx85llejbH2Vv2ValFVcaWHwI6yC3HaVJVCsUBJPs2ZtdWsfd87dJYYTMVF9B0t4eZ8TKbEcCqVMQ9RlApi1mLALlC6AdbDwA3mUNOmysjtWkJ47xgs1OrTdD2T2zKbNarTIJINja9h4XEok5qxCuGRjYG9nLHN/UARG+KEdq1O2isVuQVY69QT5X26y05d4Jh8SzIzOrDvDLl7yiwO4OoP0mjdIx23+yVhufMRmGejSINtBnU/A3a/ynQMNULIrMuQkAlb3KnwJlVwrlzD4chqaXce+5zMPToPUAS4ExbXo6IprtioIV4Iiw5DxnEaNK3a1US+wZgCfQbmPYqoVRmVC7BSVQEAsQNFudBc9ZyrHLUqVGqVjdzbN5HwHgB0EuMeRnknxRfcy477Sy5LtRS5Frd5urG5BGm2nU+Mhpw4utSxUJSZUzjXM7AHKLkfeUX8TGlbLSA8rn8Za/s+4Uexp1yVHeqWXICT3yLs17gi1h4ADxM1m+CVGEF5JNsjKTQpGit0LC1TQh6hPUm1x4ADQXO8jpypVrMrZWQE6u9zYAX2bvXO2wnRomZPJ+jdYvtlBy/wAtnC1GcV2ZSLZMoA8i2puR4i0v4IDMzVKgQQocCkCKETFCSxhwQQRAZnDUs1SiPFwPrOlYbABL63nM+GVL1qH/AOi/+wnVjlvvOnH7OeXoo8doSAZJ4WdN5C4mRnOURinXZOkqh8lQ9x5jcax7CnuCNUKZqnvSU1DLp0lw+jGUadkfFVBM3xo2HzmixNNjMxzE9gJOXY4OhgVlVFvuRt1jFSnWqj+Eyo17AtqEHVre8/lsIrDYMEB2JNwNNh5X8ZaURMG0lS7NWpSe+jn3NnBalBxVZzUD2zVCLHtANQRfS9r+esn8mYe9ftGuBSUs19LFhYX+BJ+E1XHuG/aaDUtL3BW+1wevlvMgmCNGnilLsHpVFTKpNmDIrq+W9iApbp7plxdqmZSjTs29DjdBzlV7tvlysWt42APTWUvE+cVAH2YZjcgl0awA00Gl7zN8D4LWJDUqbi/v6ga+LE6/WaSpyixpgCuc4GuYApfytYgdOsKimPlOS0VeG5vxIe75WXquULp5Eaj6zZYPi1OpR7e5RACSXFrW39fhKbgfK6J3sQuZwfZ0NPfQge9p4/KRv2hYpglKiugcszeYTLlHpdr/AAEl03oceUU3JlPxjnWvUcphwKaHQG38Q+d72X0G3jEGk1lNQEA2BPuk6XF9rxXAOXqlQhgpC/fYaW8vH4ToOHwaIgpgXXz1v5nxlqSgZqMsnZz7i+HC4etVqdwrSJpUyLGqzWVXN/dBYaeNr2Gh2FHiOGwyU6D1kDJTQZb3YgKBfKNdbGZ3nriSmvQpBC/Y1Uq1LW1AIPZ3PU2BPwmWpsyVBXpKtd3Jeo1ZHyglj3faAY6b6jbwg7ltlpqGkdcw+IWoodfZYXBII09DHJksBzqCVWvRKkkC9M51BO11sD8rzS4XG06l+zdWsbEKQSp8GG4PrMmmjaMlLofgvCMERQcEKCDGgxFAxAihJZQq8EKFJGYnCVO+vkfzmxOMqb5ztMRhT3x6mawGdF7OKfSLbAViQS2smdoDK3ANobyYtVZaLgSKVcAEiKWvfUyMlUa2iu02jKVDmIxoGkyHNj2UE+MuuN4+lRU1KnQaDqx6KPOYDiHEauMbayjYe6vqfeMKsxyTUTQcNx9KooRHBZVuV62/P4RWJ4vTpg94Fg2XL1zaafUTKcR4UaFFa6tdi4GYXFgQ2ottrp8ZEFRmp2AZ3uGsNTuCxt17o+khY1dsJZpVVG7x3G0ooCbNUsP4akaNbUE9BeZH/wCSqMWmI7LMWotTqqptTur3zKSDmshsf0j3LFD7RiBnXMgDFgdvAA+Pet8jLHi+BC4/DdjTRFqU6tJiEuCtrk5FtsNAT4+AktJaKi5S2x/i3N1HIRSzPe40uv13HqNZl05yxaEHPmAAGWykfE2LX8dby3HJdRK4CkGjmU30BCg3KkeNha4mm4zy7QxPedcr/fSwb+7SzfGVcQqbIPKHNIxd0qBUqjUBb2dPEX6jqP8ABoqlBGILKrEbEgEj0vtMnheSuyqLVpVu+pBUlbbbg2OoI0+M2EzdejWN1sEgcVxxpgBBmdvZA1+NusnEyt4hxWlRNm9q2trXtqRc/l5xx2+gm6XdGR4jgHesKPvtQr12HiQMqDN1OdlJtppa5mewtEqOvpLXjPFFq4lqoQlRSWmtmAN8xZi11I62sL7bxzDYIfZHxTHKqk2HtFtQoXYAd42vr6aTa/s5mk9RID0RveFzBzbWqZUpOUARQ7rpUdrd677gXvoPPxkSrjxpbQdbg/L032lriuU2rouJwZGWoofsWYgqx3CMdxe/tfOKdCxp7ozuF4tiEN1rVQf62+oJsZt+WOcHqEUsQCzFgqMi6m4N8yjTS248dtLzOYflTGMbGgV82ZQo+R1+F5uOW+W0wveJz1SLFuijqqDoPPc/SZOjWClZf3giYJJ0iosRsRQklCoILwRAYGge/wDE/jNdRINpkE9v+4/jNFRYi03q2zjn0i3puANIrt9JVsxvFU8RraS4siyyp4i0kLiZWAgyRk0iTaLTZW8Y4LUxNYM7rkX2UAJ9SRpcmQeO8PSkgC3877fIaTTYFHvqNJS82Duj1mvJhwXY2+FFXDCm2zLb0PQ/A2MRwHgiUCWuWci19gB4KOkl4P8AlJ6RHEMV2dNiDZrEL/VbT9Zkrbo2kkv5MHE8caK58MiM5qoj6C3W+dhtppc7Xmb5l5ktUoVaDU3dO1OUXAUugUB7777Dw6Sr7d1ILvanfVXDFWJFtUXVj1+Ej0eGZ2p06V2L7MbKLkX2PTpNuCXZzPK30SMDzXju2UvVUqWAIZFFMAnXYZhp1vN5xjj9KhRFUEVMxsgUghj6jYDrOdcY4Q2GK9urjNsQVKk9RcdfKFgqyVVanU7QU6aNUFiCQ1wLKp0F7yHFemUskumXlHmvFVnGWygEd1RfNr7NzqfCdBvOXcG5go0XH+mGYbFqhzfBQlgZJ5l5lqYi6UsyU7aj3n8cxHTy+cON9BGfHbZ0VqoAJJFhub6D1PSc35joVxVZmVirszK49lkOoIbba2krOXOGF6qqpy5jYgbWAJJa29rbeMvOMYSvSu9ezLoO0JBBubKLHUdBa0uC4vsU5c1dFfwjhj1TkRdTa7e6g6knxt06zdYrhCNhThl0XJlBPiNQx/uAMwOM4pXpU0pJUNNAWIVDkOpublbHcnebnlbEVamGR62rG9idyt+6T8OsnIVhro57T5ervW7AoVfckjugDd79V16eQ3nUeHYNaNJKSbIoUE7mw3+O8fgkN2bQgohwQoV5JYq8F4m8F4MYoGKBjYMWJJSFQQoIDMOy9/8AuP4zYY3DqpFvuqfmJj6vt/3n8ZqMTUJUHyA+k0b3Rx5OkKVRAcNcxigTJQqSXaMkGlG0epb67RgtADFbKNFQxKAW0mV5mFx8ZLZ5Qc4cSKAINzLTtGsXZZ4L+UnpKPjHa1awpUUvYC7EjQHrrsNd/LSXWAb+Ch8hIuMr3Jp0lu7WDEeQ6noPGELseZfxMrxqpS7QUqRzdihztpZqhJLN56BR6ASPhq5ADruhDAea2I/CU7lqNZg4IOYq/iNdT/m8vW4dUekexTMWFlsQLi3RibEkXsNzNIzUlZyNO9F5zTzhSGFV8PkqGqcoVwGCWF2zofeFwAD431Ew+D41VWm1MCnZzdm7NA1iLZbgWA30AjT4Dssy1gFqI6L2JuxOZcxJI0CgW67m0cagCLqmUA6kXIGYnKLHbYiTHRtN2WWD4cr4d8Q57yVEVDcXbNcMpF9hoQfI/BF0FrsNwL3AHpr+JkJKflLteDI2HLUqiZ2UkLnAIKEEq1/Z7oqfIa6xuTRnx5MvuCYAUf4/ao1lOYU2V+7ppcG29rmMcR/1mJw1J2sCWr5QR3aVI92/TMz2FvATLcMxBoOFqsyioozaX7hFwwBt6fHwknhGGwT1KjV2L+2QqipdVHeBBFy+gN/DT1Ecr/s1jXo6disIlQWqorjcB1DAHyuI5ttMVgubMFQBWjRqAee5t11YzU8O4nSrqWovmANjoRY+GoEVM2i0yZeFCJhXiLFXhEwrwrwAVeC8TeC8BoWDFAxoGLUyShcETeCSBj8YtmP9X5zbUOFuUXbYfhMXxTQn+r850XhKtUpqQfdH4TZJPs55K0V/7pfyiW4JVbYCabD8PPvMT5SwVABLUERwRzSujIxVtxDpVJa8cp/xm+Er+xksgOQeYsErgMRciTzYbx7iFAWHpElSLxrZAwY/hL6RSJa+QAE9fXqfGLpLZBFLM7Olq0VHGcLQRQewp1KnQuubrclvHW/zlBxnjtZqaWCAg6hDcaEFQ1Igjp8NNpP5o5ow+FqBGUvUYC5Gi01Ogc33I1NgOnSZ7jVWlQTPnve5UDUtp0/WDTTWuzjyOUZUivq3qg1iqL2eVXyCx7xbLUYbb92/9Oku+G4oYNSaqLVFUBXXMLKLtl6EPcAnTymLpcRxNQsalZxTtmcA2DLfRLDe5NgD4xLVXYd0ENvbcZbDKLeQvNnFpJWXxd/s6NwrgIxSLWK06SMSctPtS+jEWu7WA03A+U0eL4XRFFlp00GVSy92+q94Enc6jXxF5xKlxDEpoK9VR4LUdQPLKCAJYrxnF9me0r1GU6BWYn+431t0+MHD9lrXo0fNFNsZV7XDUmcBEDsise+RfKbblVsNJVUME1IkMrK1tiCDYjqDrrLrlPnBkCUalNCg7uZLq3mxB0fxJjnHqLCvULdXJHmvun5fhHFNaMcqpWUWL4YwptWDgKhQFDfMS5sCptbofC1pY8t8zNhlCGmrJe5tcPc7m5NibAaW6S/ocF7XBOuz1LOp6Aobp8Dr/wApiGw7KxV1KsN1O4I8Ym7FuKTOuYTFrVRalM3VhcH9fAx68y/IuJBpvTuSVYPrtZxaw18V+s015mdUXasVeC8TCvAoVeC8TeC8BoXeKBjV4YMkaHs0EbvBFRRleYGsH8bzrfL/AGZoU2pEFSosR6Tz3ica9Sq5Y9TO78hUGTA0A6lTlJsd9SSPoROlLZzt6NABCdrCE7WEYZsymWSZXitQPVJXbaRcpJsozN+Edw2Eq1nIUFEBILHc69JoMNhadEdB5kyODZklZVYPgY9qrqfDoJE4thnJsi6CXeI4pSHvg+msq6/F0OwY/ISnA1i6KTDYerazi1jG+I1RQXM7ASyq8U8F+v8A1M5xbhS4g3qu58gbD8Jn4WzTyGX55p4euqVhYt7JKmzDqt9wR7UxBww2DabC46b23M6TxLlyilCpkU3Cki7E7a/rObV9J0RjqmZuWxQawy303PqNB8rmN1XF9DpYA+egB+GkaYxtjDgg5MfR13Jufjr6wmxV9wT9B9OkjEwhDgg5M0nI9MvjKIt3Qxc/2KWF/K4E6hxThgrOjEiw0cX9pdSLfHT4zB/s8w4Iqsf/AAGmn3j+Qmw+yr4v8CZnOLb0PTVMv1sNBbSRcfw+lWFqqBrbHZh6MNZUHD+Dv84k4d+lRvjM/E/srkn6LPhvBqVAlqQYXFrFri179ZY3mYelXG1SMscQPeJ9DF42NSiuka0mJmPfGVxuW+UbHE6v3zDxsfJG0hXmN/e1X70H74q/ei8bHyRss0GeY8caq9THP329t4vGxqaNbngmP/flSHDxyHzQ1xTgy0VqW1OuvxnYeD8QLU6QtYZFufgJhuI8OFUuHJysfd3tfxlpRqEKq3OVQAB5CdEMb9nNKa9GwxPFaS6ZrnwXX67SvfjpAtTQDzY3+g/WUgaHeaqCI5Empjah98jyGg+kiufHWETEMZVCG6kivH3MjVDAaY2zRBqWhtGzExicQ4ZGXxUj5i049ilsx9Z2K4nJ+PUsteovg7D6wQFW0baONGmgMQYQhmFEwR0f9ndL+A7eL2+Sj9Zq7TMckjLhV82Y/W35S/FUSBj5v0iSY32wiC8AHNPOHp0jOaDNAY5bzjdSkp9pQfhDLeEQW8ogI9XhtM7Zl+o+sh1eFOPZs3pv8pa5oRqWhQ7M5VUjQgj1jZaaSpUVtHF5HqYFTqouIgsoc8Etvsg8IIijaXi0JjcdQzqo5h0XiogNDzRAKiGgJiWMAGqhkdo+8YaBQgxDLFtEWMQDbATm/O2GK4hm6MAw+Qv9Z0plmY5q4X22xsR8RAZzdjG2l1W4JVS/czehH52kKvgqnu0nHjoDr5GKxlcYQk1OG1fuN9P1j1Lg7k96w8hrJbGa7gGJC4emvlf5kn85ZripRYHDlVHpLGmJnZdFitaOrUMhJePK0diolBoeaMq0VmgIczQi0TBAYq8SzQjG2MYCoYNo1eAGIZKzj/LQSPBEFGqzxaGNUnVhdSI7a06TnHLwXiM3nBmgA5eJJic0F4AJYxlo4xjLmIoTeAmIYxF4hi2MrsWJMep/mshVqn+GAqKyrRvIzYb/AC0s2Pl+UbYeETGVb4aI+yyzZYjLJoqxmjR0jopR+kIsyKKTGAkWFiriEXhQAvE54IkwGGakAqRsxN4gHxVgLRkRYEYULAjioYlUjpsguxA9YAK7I+UOV/77pf8A2D5wRiLfg3tH1mg6QQTaPRi+xLQ4IJQgQQQQAbeNvBBEyhlowdjBBIZQVSQRvBBBCI1Tc+sbMEEGAo/pGevzggkjHV6R9djBBJKGmhGCCAwomCCIaEQocEQwCPJBBAGS8PvKHm32D6wQRkmTgggjA//Z",
+      "desc": "The beloved South Indian rose  with intensely fragrant white flowers. Perfect for puja, hair flowers, and garden borders. Thrives exceptionally well in AP's climate.",
+      "care": {
+        "Light": "Full to partial sun",
+        "Water": "Daily in summer",
+        "Soil": "Sandy loam",
+        "Fertilizer": "Bi-monthly"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Trending 🔥",
+      "seasonal": [
+        "monsoon",
+        "winter"
+      ]
+    },
+    {
+      "id": "bonsai-mini",
+      "name": "Bonsai Mini",
+      "cat": "Bonsai",
+      "emoji": "🪴",
+      "price": 880,
+      "bulk": 760,
+      "rating": 4.9,
+      "reviews": 214,
+      "image": "https://m.media-amazon.com/images/I/51sHaq8H6mL.jpg",
+      "desc": "A refined miniature bonsai selected for its sculpted trunk and balanced canopy. Excellent for desks, gift sets, and premium interiors.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Light watering",
+        "Soil": "Bonsai mix",
+        "Pruning": "Shape regularly"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "Premium Bonsai",
+      "seasonal": [
+        "monsoon",
+        "winter"
+      ]
+    },
+    {
+      "id": "Foxtail Palm ",
+      "name": "Foxtail Palm ",
+      "cat": "Outdoor",
+      "emoji": "🌺",
+      "price": 350,
+      "bulk": 290,
+      "rating": 4.7,
+      "reviews": 189,
+      "image": "https://m.media-amazon.com/images/I/61D8O6POv3L.jpg",
+      "desc": "Stunning succulent with thick caudex trunk and vibrant trumpet flowers. Extremely drought-tolerant and ideal for hot AP summers. Available in red, pink, and white varieties.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Once a week",
+        "Soil": "Cactus mix",
+        "Frost": "Not tolerant"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "New Arrival",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "Adenium (Desert Rose)",
+      "name": "Adenium (Desert Rose)",
+      "cat": "Flower",
+      "emoji": "🌸",
+      "price": 120,
+      "bulk": 90,
+      "rating": 5,
+      "reviews": 567,
+      "image": " https://m.media-amazon.com/images/I/613SXVudq9L._SX679_.jpg",
+      "desc": "The beloved South Indian rose  with intensely multiple colors of flowers. Perfect for puja, hair flowers, and garden borders. Thrives exceptionally well in AP's climate.",
+      "care": {
+        "Light": "Full to partial sun",
+        "Water": "Daily in summer",
+        "Soil": "Sandy loam",
+        "Fertilizer": "Bi-monthly"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Trending 🔥",
+      "seasonal": [
+        "monsoon",
+        "winter"
+      ]
+    },
+    {
+      "id": "Ficus benjamina",
+      "name": "Ficus benjamina",
+      "cat": "Outdoor",
+      "emoji": "🌺",
+      "price": 350,
+      "bulk": 290,
+      "rating": 4.7,
+      "reviews": 189,
+      "image": "https://m.media-amazon.com/images/I/51CZiouiEWL.jpg",
+      "desc": "Stunning succulent with thick caudex trunk and vibrant trumpet flowers. Extremely drought-tolerant and ideal for hot AP summers. Available in red, pink, and white varieties.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Once a week",
+        "Soil": "Cactus mix",
+        "Frost": "Not tolerant"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "New Arrival",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "mango",
+      "name": "Dussehri Mango ",
+      "cat": "Fruit",
+      "emoji": "🥭",
+      "price": 750,
+      "bulk": 620,
+      "rating": 4.8,
+      "reviews": 145,
+      "image": "https://shrigramorganics.com/wp-content/uploads/2022/08/mango-malda-grafted-plant-1559703105_p_2765580_941344_79af28d5-05ca-4814-8b41-73e3af702b3e-1.jpg",
+      "desc": "Grafted Dussehri mango saplings that fruit within 2–3 years of planting. Superior to seedling trees, these grafted plants are true-to-type with guaranteed fruit quality.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Deep loamy",
+        "Spacing": "10 meters"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "GUAVA",
+      "name": " Guava ",
+      "cat": "Fruit",
+      "emoji": "🥭",
+      "price": 750,
+      "bulk": 620,
+      "rating": 4.8,
+      "reviews": 145,
+      "image": "https://m.media-amazon.com/images/I/71jb4X0zIVL._SX679_.jpg",
+      "desc": "Grafted Dussehri guava saplings that fruit within 2–3 years of planting. Superior to seedling trees, these grafted plants are true-to-type with guaranteed fruit quality.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Deep loamy",
+        "Spacing": "10 meters"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "Papaya",
+      "name": " Papaya ",
+      "cat": "Fruit",
+      "emoji": "🥭",
+      "price": 750,
+      "bulk": 620,
+      "rating": 4.8,
+      "reviews": 145,
+      "image": "https://dukaan.b-cdn.net/700x700/webp/upload_file_service/51a7291e-6a9a-40e8-9882-af917b01151d/image-e22d1f7c-73af-4ef6-8e93-fd5d5a09b7c0.jpg",
+      "desc": "Grafted Dussehri papaya saplings that fruit within 2–3 years of planting. Superior to seedling trees, these grafted plants are true-to-type with guaranteed fruit quality.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Deep loamy",
+        "Spacing": "10 meters"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "Juniper Bonsai ",
+      "name": "Juniper Bonsai ",
+      "cat": "Bonsai",
+      "emoji": "🌵",
+      "price": 80,
+      "bulk": 55,
+      "rating": 4.9,
+      "reviews": 672,
+      "image": "https://m.media-amazon.com/images/I/51dG2tXoYGL._SY300_SX300_QL70_FMwebp_.jpg",
+      "desc": "The multipurpose Juniper Bonsai — a classic choice for indoor gardening. Fast-growing and extremely low maintenance. Perfect for balconies and kitchen windowsills.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Fortnightly",
+        "Soil": "Sandy, well-draining",
+        "Notes": "Don't overwater"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "coconut",
+      "name": "Hybrid Coconut",
+      "cat": "Fruit",
+      "emoji": "🥥",
+      "price": 280,
+      "bulk": 220,
+      "rating": 4.6,
+      "reviews": 98,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzlQdRsm35VDOH3Qjovp1VC60PioxoU6hdwKDFT_U4wpU_UhzK",
+      "desc": "Dwarf hybrid coconut varieties that start bearing nuts in 3–4 years, compared to 7+ years for tall varieties. Ideal for farms and large gardens in coastal AP.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular deep watering",
+        "Soil": "Sandy-loam coastal",
+        "Spacing": "7–8 meters"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "Red jackfruit",
+      "name": "Red Jackfruit",
+      "cat": "Fruit",
+      "emoji": "🥥",
+      "price": 280,
+      "bulk": 220,
+      "rating": 4.6,
+      "reviews": 98,
+      "image": "43.jpeg",
+      "desc": "Dwarf hybrid jackfruit varieties that start bearing fruits in 3–4 years, compared to 7+ years for tall varieties. Ideal for farms and large gardens in coastal AP.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular deep watering",
+        "Soil": "Sandy-loam coastal",
+        "Spacing": "7–8 meters"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "golden-pothos",
+      "name": "Golden Pothos",
+      "cat": "Indoor",
+      "emoji": "🌺",
+      "price": 520,
+      "bulk": 440,
+      "rating": 4.7,
+      "reviews": 203,
+      "image": "https://m.media-amazon.com/images/I/61c0ixmI5NL._AC_UF1000,1000_QL80_.jpg",
+      "desc": "Long-lasting waxy red spathes that bloom almost year-round. Excellent air purifier and a popular gifting plant. Very photogenic and social-media worthy!",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Weekly",
+        "Soil": "Chunky aroid mix",
+        "Humidity": "Moderate"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "winter"
+      ]
+    },
+    {
+      "id": "Areca palm",
+      "name": "Areca palm",
+      "cat": "Outdoor",
+      "emoji": "🌳",
+      "price": 90,
+      "bulk": 65,
+      "rating": 4.8,
+      "reviews": 334,
+      "image": " https://buyfromcostarica.com/wp-content/uploads/2023/06/r__s_ornamentales_Chrysalidocarpus_lutescens__palma_areca_producto_2.jpg",
+      "desc": "The nutrient powerhouse — every part of the Areca palm is edible and medicinal. Extremely fast-growing, drought-tolerant, and a must-have for health-conscious homes.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Moderate",
+        "Soil": "Well-drained",
+        "Growth": "Fast"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "marigold",
+      "name": "African Marigold",
+      "cat": "Seasonal",
+      "emoji": "🌼",
+      "price": 40,
+      "bulk": 25,
+      "rating": 4.6,
+      "reviews": 445,
+      "image": "https://i5.walmartimages.com/seo/Expert-Gardener-Orange-African-Marigold-Flowers-1-Pt-Pot-Lives-Plants-Garden-Flowers-Full-Sun_8a3a8227-9588-4079-a60d-4ac0afd87710.16e8cd3588f83573a93303ff8ba63948.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF",
+      "desc": "Vibrant orange and yellow marigolds for festivals, borders, and pest control in vegetable gardens. Available in seedlings and mature plants throughout the year.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Moderate",
+        "Season": "Year-round in AP",
+        "Pest": "Natural repellent"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Festival Season",
+      "seasonal": [
+        "winter",
+        "monsoon"
+      ]
+    },
+    {
+      "id": "portulaca",
+      "name": "Portulaca",
+      "cat": "Seasonal",
+      "emoji": "🌼",
+      "price": 55,
+      "bulk": 40,
+      "rating": 4.6,
+      "reviews": 168,
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-g-portulaca-oleracea-10-O-clock-pink-plant_600x600.jpg?v=1634226669",
+      "desc": "Colorful drought-loving seasonal blooms that spread beautifully in sunny beds and borders.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Low",
+        "Soil": "Sandy well-drained",
+        "Bloom": "Summer"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "rain-lily",
+      "name": "Rain Lily",
+      "cat": "Seasonal",
+      "emoji": "🌼",
+      "price": 65,
+      "bulk": 45,
+      "rating": 4.7,
+      "reviews": 124,
+      "image": "https://organicbazar.net/cdn/shop/files/pink_Rain_Lily_Flowers_Rain_Lily_bulbs_flowers_bulb_organic_bazar_Mix_color_Rain_Lily_Flowers_organic_bazar_flowers_flowers_bulbs.jpg?v=1753880390&width=990",
+      "desc": "Delicate seasonal lily that blooms quickly after rain and adds a bright accent to garden edges.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "After rain or moderate",
+        "Soil": "Loose soil",
+        "Bloom": "Monsoon"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "petunia",
+      "name": "Petunia",
+      "cat": "Seasonal",
+      "emoji": "💜",
+      "price": 45,
+      "bulk": 30,
+      "rating": 4.6,
+      "reviews": 142,
+      "image": "https://alansgarden.in/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-13.28.28_5629019d-768x768.jpg",
+      "desc": "Compact winter bedding flower with bright trumpet blooms for pots, beds, and borders.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Rich potting mix",
+        "Bloom": "Winter"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "winter"
+      ]
+    },
+    {
+      "id": "dianthus",
+      "name": "Dianthus",
+      "cat": "Seasonal",
+      "emoji": "🌸",
+      "price": 50,
+      "bulk": 35,
+      "rating": 4.6,
+      "reviews": 108,
+      "image": "https://m.media-amazon.com/images/I/61IQYJCDZYL.jpg",
+      "desc": "Neat, fragrant winter flower ideal for pots and landscape edging.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Moderate",
+        "Soil": "Well drained",
+        "Bloom": "Winter"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "winter"
+      ]
+    },
+    {
+      "id": "Chinese Evergreen",
+      "name": "Chinese Evergreen (Aglaonema)",
+      "cat": "Indoor",
+      "emoji": "🌸",
+      "price": 320,
+      "bulk": 270,
+      "rating": 4.8,
+      "reviews": 267,
+      "image": "https://houseplantsnook.com/wp-content/uploads/2024/10/pink-chinese-evergreen.png.webp",
+      "desc": "Elegant white-spathed beauty that thrives in low-light conditions. An excellent air purifier that removes benzene and formaldehyde. Perfect for bedrooms.",
+      "care": {
+        "Light": "Low to medium",
+        "Water": "When topsoil dries",
+        "Soil": "Peat-based mix",
+        "Tip": "Droops when thirsty"
+      },
+      "stock": false,
+      "trending": false,
+      "badge": "popular",
+      "seasonal": [
+        "winter"
+      ]
+    },
+    {
+      "id": "ficus-bonsai",
+      "name": "Ficus Bonsai",
+      "cat": "Bonsai",
+      "emoji": "🪴",
+      "price": 950,
+      "bulk": 820,
+      "rating": 4.8,
+      "reviews": 86,
+      "image": "https://www.thespruce.com/thmb/7P11f5C-0oaN8XqQuksDD43kAGA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-ginseng-ficus-bonsai-5083016-hero-3f7e663f55fc4470b2ec1e8f9fb45545.jpg",
+      "desc": "Classic beginner bonsai with a balanced canopy and strong training potential.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Light watering",
+        "Soil": "Bonsai mix",
+        "Pruning": "Regular"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "jade-bonsai",
+      "name": "Jade Bonsai",
+      "cat": "Bonsai",
+      "emoji": "✨",
+      "price": 890,
+      "bulk": 760,
+      "rating": 4.7,
+      "reviews": 74,
+      "image": "https://a-z-animals.com/media/2022/12/Shutterstock_1877993242-1024x794.jpg",
+      "desc": "Succulent bonsai style plant with a thick trunk and minimal water needs.",
+      "care": {
+        "Light": "Bright sun",
+        "Water": "Low",
+        "Soil": "Fast draining",
+        "Pruning": "Light shaping"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "royal-palm",
+      "name": "Royal Palm",
+      "cat": "Outdoor",
+      "emoji": "🌴",
+      "price": 980,
+      "bulk": 840,
+      "rating": 5,
+      "reviews": 176,
+      "image": "https://rknurserygarden.com/wp-content/uploads/2025/06/PALM-600x693.webp",
+      "desc": "A tall, elegant landscape palm that creates a premium resort-style look. Royal Palm is ideal for entrances, avenues, and spacious gardens. Perfect 5-star quality for a flawless green statement.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular deep watering",
+        "Soil": "Well-drained sandy loam",
+        "Spacing": "Large open spaces"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Premium",
+      "seasonal": [
+        "summer",
+        "monsoon"
+      ]
+    },
+    {
+      "id": "pandas",
+      "name": "Weeping Fig (Ficus Benjamina -panda)",
+      "cat": "Outdoor",
+      "emoji": "🌴",
+      "price": 980,
+      "bulk": 840,
+      "rating": 5,
+      "reviews": 176,
+      "image": "https://m.media-amazon.com/images/I/71Xn6-IWZPL._SX679_.jpg",
+      "desc": "A cutting ball, elegant landscape plant that creates a premium resort-style look. pandas is ideal for entrances, avenues, and spacious gardens. Perfect 5-star quality for a flawless green statement.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular deep watering",
+        "Soil": "Well-drained sandy loam",
+        "Spacing": "Large open spaces"
+      },
+      "stock": true,
+      "trending": true,
+      "badge": "Premium",
+      "seasonal": [
+        "summer",
+        "monsoon"
+      ]
+    },
+    {
+      "id": "bonsai",
+      "name": "Juniper Bonsai",
+      "cat": "Bonsai",
+      "emoji": "🌵",
+      "price": 80,
+      "bulk": 55,
+      "rating": 5,
+      "reviews": 672,
+      "image": "https://m.media-amazon.com/images/I/51dG2tXoYGL._SY300_SX300_QL70_FMwebp_.jpg",
+      "desc": "The multipurpose Juniper Bonsai — a classic choice for indoor gardening. Fast-growing, low maintenance, and a perfect 5-star accent for balconies and cozy spaces.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Fortnightly",
+        "Soil": "Sandy, well-draining",
+        "Notes": "Don't overwater"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "areca-palm",
+      "name": "Areca Palm",
+      "cat": "Indoor",
+      "emoji": "🌴",
+      "price": 390,
+      "bulk": 330,
+      "rating": 4.7,
+      "reviews": 241,
+      "image": "https://eagleshopy.in/cdn/shop/files/ArecaPalm_Dypsislutescens_-IndoorDecorativePalmPlantAir-Purifying-1.webp?v=1721679097",
+      "desc": "A lush, air-purifying palm that adds a tropical feel indoors and on balconies. Very popular for modern homes and offices.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "2-3 times a week",
+        "Soil": "Loose potting mix",
+        "Humidity": "Moderate"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "Monstera",
+      "name": "Monstera",
+      "cat": "Indoor",
+      "emoji": "🌿",
+      "price": 260,
+      "bulk": 210,
+      "rating": 4.9,
+      "reviews": 414,
+      "image": "https://www.cocojungle.co/assets/images/library/Qg84JLhCYxPtLb35ZDNnxT7yjlGv5W.jpg",
+      "desc": "One of the easiest plants to maintain, Monstera thrives on neglect and still looks sharp. Great for desks,  and beginners.",
+      "care": {
+        "Light": "Low to bright indirect",
+        "Water": "Every 10-14 days",
+        "Soil": "Fast-draining mix",
+        "Tip": "Do not overwater"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "Easy Care",
+      "seasonal": [
+        "winter",
+        "summer"
+      ]
+    },
+    {
+      "id": "money-plant",
+      "name": "Money Plant",
+      "cat": "Indoor",
+      "emoji": "🌱",
+      "price": 95,
+      "bulk": 70,
+      "rating": 4.8,
+      "reviews": 612,
+      "image": "https://dukaan.b-cdn.net/700x700/webp/media/c333d93b-2188-471c-a672-2869c97699cc.jpg",
+      "desc": "A classic trailing houseplant loved for its glossy leaves and easy care. Perfect for hanging baskets, shelves, and office corners.",
+      "care": {
+        "Light": "Bright indirect",
+        "Water": "Weekly",
+        "Soil": "Rich potting mix",
+        "Support": "Climbs well"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "monsoon"
+      ]
+    },
+    {
+      "id": "hibiscus",
+      "name": "Hibiscus",
+      "cat": "Flower",
+      "emoji": "🌺",
+      "price": 140,
+      "bulk": 110,
+      "rating": 4.7,
+      "reviews": 298,
+      "image": "https://m.media-amazon.com/images/I/71Cas-1X7QL._SY879_.jpg",
+      "desc": "Large tropical blooms in vivid colors that flower generously in warm weather. Great for hedges, entrances, and temple gardens.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Fertile loam",
+        "Fertilizer": "Monthly"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    },
+    {
+      "id": "Jasmine",
+      "name": "Jasmine",
+      "cat": "Flower",
+      "emoji": "🌺",
+      "price": 140,
+      "bulk": 110,
+      "rating": 4.7,
+      "reviews": 298,
+      "image": "https://m.media-amazon.com/images/I/71BFXce0nkL._SX679_.jpg",
+      "desc": "The beloved South Indian Jasmine (Mallipoo) with intensely fragrant white flowers. Perfect for puja, hair flowers, and garden borders. Thrives exceptionally well in APs climate.",
+      "care": {
+        "Light": "Full sun",
+        "Water": "Regular",
+        "Soil": "Fertile loam",
+        "Fertilizer": "Monthly"
+      },
+      "stock": true,
+      "trending": false,
+      "badge": "",
+      "seasonal": [
+        "summer"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Amit Kulkarni",
+      "loc": "Maharashtra",
+      "avatar": "A",
+      "stars": 5,
+      "text": "Ordered a set of mango and coconut saplings — arrived healthy and well-packed. Great service and follow-up.",
+      "plant": "Mango, Coconut"
+    },
+    {
+      "name": "Rajesh Patel",
+      "loc": "Mumbai",
+      "avatar": "R",
+      "stars": 5,
+      "text": "Fast delivery to Mumbai and plants were in excellent condition. Highly recommended for bulk and retail orders.",
+      "plant": "Bougainvillea, Hibiscus"
+    },
+    {
+      "name": "Naveen Reddy",
+      "loc": "Telangana",
+      "avatar": "N",
+      "stars": 5,
+      "text": "Their guidance over WhatsApp helped my terrace garden flourish. Friendly staff and quality plants.",
+      "plant": "Snake Plant, Ficus"
+    },
+    {
+      "name": "Sandeep Rao",
+      "loc": "Hyderabad",
+      "avatar": "S",
+      "stars": 4,
+      "text": "Good quality bonsai and careful packaging. One small leaf bruise but customer care resolved it quickly.",
+      "plant": "Juniper Bonsai"
+    },
+    {
+      "name": "Vikram",
+      "loc": "Vizag",
+      "avatar": "V",
+      "stars": 5,
+      "text": "Excellent variety and prompt delivery. Plants arrived healthy and are thriving in my garden.",
+      "plant": "Royal Palm, Adenium"
+    },
+    {
+      "name": "Karan Deshmukh",
+      "loc": "Maharashtra",
+      "avatar": "K",
+      "stars": 5,
+      "text": "Very satisfied with the bulk order for our landscaping project — professional and on time.",
+      "plant": "Shade Trees"
+    }
+  ]
+}

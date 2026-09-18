@@ -1,103 +1,112 @@
-# 🌿 Green Shade Flora — Full-Stack Node.js + React Botanical Platform
+# 🌿 Green Shade Nursery (Est. 1997) — Full-Stack Business Platform
 
-A premier, full-stack botanical education and AI-guided plant care application built with **Node.js (Express)**, **React (Vite)**, **Groq AI (Llama-3.3-70b)**, and modern glassmorphic styling.
-
----
-
-## ✨ Features
-
-- 🌿 **Premier Modern Aesthetics**: Tailored botanical color tokens, glassmorphism, Google Fonts (*Outfit* & *Plus Jakarta Sans*), micro-interactions, and responsive layout for mobile and desktop.
-- 🔐 **Authentication System**:
-  - Full **Log In** & **Sign Up** accessible right from the navigation bar.
-  - JWT token and password encryption with `bcryptjs`.
-  - User avatar and status in the navigation bar with one-click logout.
-  - Quick **Demo Account** one-click login button for instant access (`demo@greenshade.com` / `plant123`).
-- 🤖 **Groq PlantMate AI Assistant**:
-  - Powered by Groq's high-speed `llama-3.3-70b-versatile` model.
-  - Available as an embedded consultation assistant and a floating interactive drawer widget.
-  - Chat history persistence and suggested prompt chips.
-- 📚 **Comprehensive Botanical Catalog**:
-  - **Plant Types Page**: 6 interactive families (Indoor, Outdoor, Medicinal, Flowering, Succulents, Air Purifiers).
-  - **Smart Search & Filter**: Real-time fuzzy search by name, light, space, and care difficulty.
-  - **Plant Care Manual**: In-depth care protocols for Tulsi, Snake Plant, Aloe Vera, plus an interactive symptom troubleshooter.
-  - **Indoor vs Outdoor**: Full side-by-side comparison matrix and decision guide.
+> **Founder & Owner**: Surapureddy Rama Krishna  
+> **Location**: Main Road Kadiyapu Savaram, Kadiyam Mandal, East Godavari District, Andhra Pradesh - 533126, India  
+> **Heritage**: 29+ Years of Horticultural Heritage (Direct Nursery Grounds in India's Plant Nursery Capital)  
+> **Primary / WhatsApp**: `+91 9666004249` | **Alternate**: `+91 8885322259`
 
 ---
 
-## 📁 Project Architecture
+## 🏛️ Business Overview & Identity
+
+**Green Shade Nursery** is a high-volume, professional plant cultivation and nursery operation based in Kadiyapu Savaram, Andhra Pradesh. The platform is designed for real-world commercial trade, retail homeowners, landscape architects, B2B wholesale buyers, and government tender contracts.
+
+### ✨ Key Capabilities
+- **6 Core Horticultural Categories**:
+  1. Ornamental Plants (Foliage, Hedge & Landscape)
+  2. Mature Specimen Palms (Royal, Fox Tail, Areca, Date Palms)
+  3. Flowering Shrubs (Tropical, Hibiscus, Bougainvillea, Jasmine)
+  4. Exotic Indoor Greens (Air-purifiers, Philodendrons, Aglaonemas, Ficus)
+  5. Handcrafted Bonsai (Specimen Ficus & Cascading Jade)
+  6. Grafted Fruit Saplings (High-yield Mango, Guava, Citrus, Sapota)
+- **Green Cart Inquiry System**: Eliminates generic consumer checkout; generates structured plant inquiry orders with wholesale/retail pricing requests routed directly to WhatsApp and synced to the database.
+- **PostgreSQL Database + Realtime Nursery Desk**: Customer orders and plant inquiries are recorded in PostgreSQL (with automatic zero-config SQLite resilience fallback).
+- **Interactive Nursery Desk**: Built-in admin panel to view, filter, and track customer inquiries in real-time.
+
+---
+
+## 🏗️ Architecture & Technology Stack
 
 ```
 Green Shade Flora/
-├── server/                    # Node.js + Express Backend
-│   ├── server.js              # Express API (Groq AI chat, Auth, Chat history, Static React serve)
-│   ├── package.json           # Dependencies: express, groq-sdk, jsonwebtoken, bcryptjs, cors, dotenv
-│   └── data/
-│       ├── users.json         # Local user account storage
-│       └── store.json         # Chat session histories
-├── frontend/                  # React + Vite Client
+├── backend/                  # FastAPI + SQLAlchemy + PostgreSQL Backend
+│   ├── app/
+│   │   ├── models/           # SQLAlchemy DB Models (Plant, Order/Inquiry, User, Review)
+│   │   ├── routes/           # REST APIs (/api/inquiries, /api/plants, /api/orders, /api/health)
+│   │   ├── database.py       # PostgreSQL connection with SQLite automatic fallback
+│   │   └── main.py           # FastAPI Application entry point
+│   ├── run.py                # Server runner script (Port 8000)
+│   ├── requirements.txt      # Python dependencies (FastAPI, uvicorn, SQLAlchemy, psycopg2)
+│   └── .env                  # PostgreSQL DB connection string & secret keys
+│
+├── frontend/                 # React 18 + Vite Frontend
 │   ├── src/
-│   │   ├── components/        # Navbar, Footer, PlantCard, ChatBot
-│   │   ├── context/           # AuthContext.jsx (global authentication state)
-│   │   ├── pages/             # Home, PlantTypes, SearchPlants, PlantCare, IndoorOutdoor, Login, Signup
-│   │   ├── data/              # plantsData.js (botanical catalog & comparison data)
-│   │   ├── styles/            # index.css (design tokens, glassmorphism, responsive styles)
-│   │   ├── App.jsx            # Routing and application layout
-│   │   └── main.jsx           # React DOM root
-│   ├── index.html
-│   ├── vite.config.js         # Vite configuration with API proxy to port 5000
-│   └── package.json           # Dependencies: react, react-dom, lucide-react, vite
-├── legacy_backup/             # Preserved backup of original HTML/CSS files
-├── package.json               # Root scripts to run backend and frontend
-├── .env                       # GROQ_API_KEY, JWT_SECRET, PORT
+│   │   ├── components/       # Navbar, Footer, GreenCartDrawer, InquiryModal, AdminInquiryDrawer, PlantCard
+│   │   ├── pages/            # Home, PlantsPage, About, Services, Contact
+│   │   ├── context/          # GreenCartContext.jsx (Cart & Inquiry State)
+│   │   ├── services/         # api.js (Frontend REST client for FastAPI & PostgreSQL)
+│   │   ├── data/             # plantsData.js (Curated plant catalog & business profile)
+│   │   └── styles/           # index.css (Comprehensive Green Shade Nursery styling)
+│   ├── package.json          # React, Vite, Lucide-react
+│   └── vite.config.js        # Port 5173 with proxy to Backend Port 8000
+│
+├── package.json              # Root unified run commands
 └── README.md
 ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run the Project
 
-### 1. Prerequisites
-- **Node.js** (v18 or newer)
-- Existing `.env` file containing your `GROQ_API_KEY`
-
-### 2. Quick Start (Development Mode)
-
-From the project root directory:
-
-**Terminal 1 — Start Node.js Backend API:**
-```bash
-npm run server
-# Or: cd server && npm start
+### 1. Run the Backend (FastAPI + PostgreSQL / SQLite)
+From the project root folder:
+```powershell
+python -m uvicorn backend.app.main:app --reload --port 8000
 ```
-*Server runs at `http://localhost:5000`.*
-
-**Terminal 2 — Start React Frontend (with Hot Reload):**
-```bash
-npm run frontend
-# Or: cd frontend && npm run dev
+*Or using the backend runner:*
+```powershell
+python backend/run.py
 ```
-*Frontend opens at `http://localhost:5173`.*
+- API Health: `http://127.0.0.1:8000/api/health`
+- Swagger Interactive Docs: `http://127.0.0.1:8000/docs`
+- Inquiries API: `http://127.0.0.1:8000/api/inquiries`
+
+### 2. Run the Frontend (React + Vite)
+In a separate terminal:
+```powershell
+npm --prefix frontend run dev
+```
+*Or from the root:*
+```powershell
+npm run dev
+```
+- Website URL: `http://localhost:5173/`
 
 ---
 
-### 3. Single-Server Production Mode
+## 📋 Features in Detail
 
-You can also run both the backend API and the compiled React frontend from a single Node.js command:
+### 1. Direct WhatsApp Inquiry Quotation Generator
+When visitors add plants to their **Green Cart** and click **"Generate WhatsApp Inquiry"**:
+1. It asynchronously posts the inquiry to the **FastAPI + PostgreSQL** backend (`/api/inquiries`).
+2. It launches an official WhatsApp message to **Surapureddy Rama Krishna** (`+91 9666004249`) with:
+   - Order Code (e.g. `ORD-1789747718617`)
+   - Customer Name, Phone, and Delivery Location
+   - Requirement Type (Retail / B2B Wholesale / Landscaping / Tender)
+   - Exact Plant Names and Quantities
+   - Target Delivery Timeline & Notes
 
-```bash
-# Build React application
-npm run build
-
-# Start the Node.js server (serves both React and API endpoints)
-npm run server
-```
-*Visit `http://localhost:5000` in your browser.*
+### 2. Nursery Desk (Admin Order Viewer)
+Click **"📋 Nursery Desk"** in the top utility bar or footer to open the drawer:
+- View all inquiries saved in PostgreSQL.
+- Filter by status (`ALL`, `PENDING`, `CONFIRMED`, `COMPLETED`).
+- Update inquiry status with one click (`Confirm`, `Mark Done`).
 
 ---
 
-## 🔑 Demo Account Credentials
-
-To quickly test authenticated features without registering a new email:
-- **Email**: `demo@greenshade.com`
-- **Password**: `plant123`
-*(Or click the "One-Click Login" button directly on the Login page).*
+## 🌿 Business Contact Info
+- **Founder & Owner**: Surapureddy Rama Krishna
+- **Address**: Main Road Kadiyapu Savaram, Kadiyam Mandal, East Godavari District, Andhra Pradesh - 533126
+- **WhatsApp / Primary**: +91 9666004249
+- **Alternate Phone**: +91 8885322259
+- **Working Hours**: Monday – Saturday: 7:00 AM – 8:00 PM | Sunday: 8:00 AM – 7:00 PM

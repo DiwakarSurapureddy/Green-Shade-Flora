@@ -1,23 +1,24 @@
 {
-  "name": "green-shade-flora",
-  "version": "2.0.0",
-  "description": "Full-Stack Node.js + React Botanical Education and AI Care Platform",
+  "name": "green-shade-nursery",
+  "version": "3.0.0",
+  "description": "Green Shade Nursery — Established 1997 • Kadiyapu Savaram • Professional Full-Stack Nursery Platform",
   "scripts": {
-    "server": "npm --prefix server start",
-    "server:dev": "npm --prefix server run dev",
+    "dev": "npm --prefix frontend run dev",
     "frontend": "npm --prefix frontend run dev",
+    "backend": "python -m uvicorn backend.app.main:app --reload --port 8000",
     "build": "npm --prefix frontend run build",
-    "install:all": "npm --prefix server install && npm --prefix frontend install"
+    "preview": "npm --prefix frontend run preview"
   },
   "keywords": [
-    "botanical",
-    "plant-care",
+    "green-shade-nursery",
+    "nursery",
+    "kadiyapu-savaram",
+    "plants",
+    "horticulture",
+    "fastapi",
     "react",
-    "nodejs",
-    "express",
-    "groq",
-    "ai"
+    "postgresql"
   ],
-  "author": "Green Shade Flora",
+  "author": "Surapureddy Rama Krishna — Green Shade Nursery",
   "license": "ISC"
 }
