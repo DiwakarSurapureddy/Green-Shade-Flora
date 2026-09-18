@@ -1,0 +1,70 @@
+.plant-care-ai {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+}
+
+.plant-care-ai__panel {
+  width: min(390px, calc(100vw - 2rem));
+  height: min(610px, calc(100vh - 7rem));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(116, 198, 157, 0.35);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 70px rgba(8, 26, 16, 0.2), 0 4px 15px rgba(8, 26, 16, 0.08);
+  backdrop-filter: blur(18px);
+  animation: plant-care-ai-rise 0.28s ease both;
+}
+
+.plant-care-ai__panel--minimized { height: auto; }
+
+.plant-care-ai__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.95rem;
+  color: #fff;
+  background: linear-gradient(135deg, #123d27, #2d6a4f);
+}
+
+.plant-care-ai__identity { display: flex; align-items: center; gap: 0.65rem; }
+.plant-care-ai__identity strong, .plant-care-ai__identity span { display: block; }
+.plant-care-ai__identity strong { font-family: var(--font-display); font-size: 0.98rem; letter-spacing: 0; }
+.plant-care-ai__identity span { margin-top: 0.15rem; color: #c9e8d5; font-size: 0.68rem; }
+.plant-care-ai__identity i { display: inline-block; width: 6px; height: 6px; margin-right: 0.3rem; border-radius: 50%; background: #9ee7b6; }
+.plant-care-ai__avatar { display: grid; width: 2.35rem; height: 2.35rem; place-items: center; color: #d5f4df; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.2); border-radius: 0.75rem; }
+.plant-care-ai__controls { display: flex; gap: 0.25rem; }
+.plant-care-ai__controls button { display: grid; width: 2rem; height: 2rem; place-items: center; color: #d5f4df; background: transparent; border: 0; border-radius: 0.45rem; cursor: pointer; }
+.plant-care-ai__controls button:hover { color: #fff; background: rgba(255,255,255,0.14); }
+.plant-care-ai__messages { flex: 1; padding: 1rem 0.9rem; overflow-y: auto; background: linear-gradient(180deg, #f4faf5 0%, #fbfdfb 100%); }
+.plant-care-ai__message { display: flex; align-items: flex-start; gap: 0.45rem; max-width: 88%; margin-bottom: 0.8rem; color: #1a3323; font-size: 0.86rem; line-height: 1.55; }
+.plant-care-ai__message p { margin: 0; white-space: pre-line; }
+.plant-care-ai__message--assistant { padding: 0.65rem 0.75rem; background: #fff; border: 1px solid #e2eee5; border-radius: 0.85rem 0.85rem 0.85rem 0.25rem; box-shadow: 0 3px 12px rgba(13,40,24,0.05); }
+.plant-care-ai__message--assistant svg { flex: 0 0 auto; margin-top: 0.2rem; color: #2d6a4f; }
+.plant-care-ai__message--user { margin-left: auto; padding: 0.65rem 0.75rem; color: #fff; background: #2d6a4f; border-radius: 0.85rem 0.85rem 0.25rem 0.85rem; }
+.plant-care-ai__typing span { display: flex; gap: 0.22rem; padding: 0.25rem 0; }
+.plant-care-ai__typing b { width: 5px; height: 5px; background: #74c69d; border-radius: 50%; animation: plant-care-ai-bounce 0.9s infinite ease-in-out; }
+.plant-care-ai__typing b:nth-child(2) { animation-delay: 0.15s; }.plant-care-ai__typing b:nth-child(3) { animation-delay: 0.3s; }
+.plant-care-ai__composer { display: flex; gap: 0.55rem; padding: 0.8rem; background: #fff; border-top: 1px solid #e2ebe4; }
+.plant-care-ai__composer input { min-width: 0; flex: 1; padding: 0.7rem 0.8rem; color: #182a20; background: #f5f9f6; border: 1px solid #dce9df; border-radius: 0.65rem; outline: 0; font-size: 0.84rem; }
+.plant-care-ai__composer input:focus { border-color: #52b788; box-shadow: 0 0 0 3px rgba(82,183,136,0.13); }
+.plant-care-ai__composer button { display: grid; width: 2.55rem; flex: 0 0 auto; place-items: center; color: #fff; background: #2d6a4f; border: 0; border-radius: 0.65rem; cursor: pointer; }
+.plant-care-ai__composer button:disabled { cursor: not-allowed; opacity: 0.45; }
+.plant-care-ai__launcher { position: relative; display: grid; width: 3.7rem; height: 3.7rem; place-items: center; color: #fff; background: #2d6a4f; border: 4px solid #fff; border-radius: 50%; box-shadow: 0 10px 26px rgba(13,40,24,0.22); cursor: pointer; transition: transform 0.25s ease, background 0.25s ease; }
+.plant-care-ai__launcher:hover { background: #143d28; transform: translateY(-3px) scale(1.03); }
+.plant-care-ai__launcher--active { background: #143d28; }
+.plant-care-ai__pulse { position: absolute; top: 0.2rem; right: 0.15rem; width: 0.55rem; height: 0.55rem; background: #a6e8bc; border: 2px solid #2d6a4f; border-radius: 50%; animation: plant-care-ai-pulse 1.8s infinite; }
+.plant-care-ai__label { display: flex; align-items: center; gap: 0.3rem; padding: 0.35rem 0.6rem; color: #fff; background: #143d28; border-radius: 0.45rem; font: 600 0.7rem var(--font-display); box-shadow: 0 4px 12px rgba(13,40,24,0.12); }
+.plant-care-ai__spin { animation: plant-care-ai-spin 0.8s linear infinite; }
+@keyframes plant-care-ai-rise { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes plant-care-ai-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(166,232,188,0.55); } 50% { box-shadow: 0 0 0 5px rgba(166,232,188,0); } }
+@keyframes plant-care-ai-bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+@keyframes plant-care-ai-spin { to { transform: rotate(360deg); } }
+@media (max-width: 520px) { .plant-care-ai { right: 0.75rem; bottom: 0.75rem; } .plant-care-ai__panel { width: calc(100vw - 1.5rem); height: min(600px, calc(100vh - 6rem)); } }

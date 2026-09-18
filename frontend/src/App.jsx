@@ -8,6 +8,7 @@ import { PlantDetailModal } from './components/PlantDetailModal';
 import { FloatingActions } from './components/FloatingActions';
 import { ToastNotification } from './components/ToastNotification';
 import { AdminInquiryDrawer } from './components/AdminInquiryDrawer';
+import { PlantCareAI } from './components/PlantCareAI';
 
 import { Home } from './pages/Home';
 import { PlantsPage } from './pages/PlantsPage';
@@ -184,6 +185,8 @@ export const App = () => {
 
         {/* Interactive Toast Alerts */}
         <ToastNotification />
+
+        <PlantCareAI />
 
         {/* Nursery Business Footer */}
         <Footer 
