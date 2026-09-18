@@ -7,7 +7,6 @@ import {
   HeartHandshake,
   ArrowLeftRight,
   LogIn,
-  UserPlus,
   LogOut,
   Menu,
   X,
@@ -104,22 +103,13 @@ export const Navbar = ({ activePage, setActivePage }) => {
                 </button>
               </div>
             ) : (
-              <>
-                <button
-                  className="btn-nav-login"
-                  onClick={() => handleNavClick('login')}
-                >
-                  <LogIn size={15} />
-                  <span>Log In</span>
-                </button>
-                <button
-                  className="btn-nav-signup"
-                  onClick={() => handleNavClick('signup')}
-                >
-                  <UserPlus size={15} />
-                  <span>Sign Up</span>
-                </button>
-              </>
+              <button
+                className="btn-nav-signup"
+                onClick={() => handleNavClick('login')}
+              >
+                <LogIn size={15} />
+                <span>Log In / Sign Up</span>
+              </button>
             )}
 
             {/* Mobile Hamburger Toggle */}
@@ -164,22 +154,14 @@ export const Navbar = ({ activePage, setActivePage }) => {
                 <span>Log Out ({user?.name})</span>
               </button>
             ) : (
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <button
-                  className="btn-secondary"
-                  style={{ flex: 1, justifyContent: 'center' }}
-                  onClick={() => handleNavClick('login')}
-                >
-                  Log In
-                </button>
-                <button
-                  className="btn-primary"
-                  style={{ flex: 1, justifyContent: 'center' }}
-                  onClick={() => handleNavClick('signup')}
-                >
-                  Sign Up
-                </button>
-              </div>
+              <button
+                className="btn-nav-signup"
+                style={{ width: '100%', justifyContent: 'center' }}
+                onClick={() => handleNavClick('login')}
+              >
+                <LogIn size={15} />
+                <span>Log In / Sign Up</span>
+              </button>
             )}
           </div>
         </div>
