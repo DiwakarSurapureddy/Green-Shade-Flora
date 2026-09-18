@@ -122,11 +122,11 @@ export const Home = ({ setActivePage, setSelectedCategory, onSelectPlant }) => {
 
           {/* Right Hero Image Collage */}
           <div className="hero-visual-column">
-            <div className="hero-visual-frame">
+            <div className="hero-visual-frame hero-specimen-stage">
               <img
-                src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80"
-                alt="Green Shade Nursery Plant Grounds & Specimen Palms in Kadiyapu Savaram"
-                className="hero-main-image"
+                src="/images/hero-bonsai-tree.jpg"
+                alt="Green Shade Nursery Masterpiece Specimen Bonsai Tree - Kadiyapu Savaram"
+                className="hero-main-image hero-specimen-tree"
               />
               <div className="hero-floating-card top-left">
                 <ShieldCheck size={20} className="icon-shield" />

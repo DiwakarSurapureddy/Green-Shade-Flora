@@ -46,7 +46,7 @@ export const CATEGORIES = [
     name: "Handcrafted Bonsai",
     shortName: "Handcrafted Bonsai",
     description: "Artfully trained miniature specimen trees shaped with decades of patience.",
-    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+    image: "/images/hero-bonsai-tree.jpg",
     badge: "Master Trained"
   },
   {
@@ -444,7 +444,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Executive Desks, Living Room Centerpieces, Heritage Gifts",
     description: "Handcrafted over years by our skilled horticulturists in Kadiyam. Features substantial exposed bulbous aerial roots and a layered cloud canopy of miniature dark green foliage.",
-    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=80",
+    image: "/images/hero-bonsai-tree.jpg",
     features: ["Sculpted aerial banyan roots", "Multi-year trained cloud pads", "Planted in ceramic bonsai tray"]
   },
   {
