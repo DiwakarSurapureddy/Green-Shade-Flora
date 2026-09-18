@@ -1,0 +1,23 @@
+{
+  "name": "green-shade-flora",
+  "version": "2.0.0",
+  "description": "Full-Stack Node.js + React Botanical Education and AI Care Platform",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "install:all": "npm --prefix server install && npm --prefix frontend install"
+  },
+  "keywords": [
+    "botanical",
+    "plant-care",
+    "react",
+    "nodejs",
+    "express",
+    "groq",
+    "ai"
+  ],
+  "author": "Green Shade Flora",
+  "license": "ISC"
+}

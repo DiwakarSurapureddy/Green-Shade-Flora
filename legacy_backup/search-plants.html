@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Plants | Lost Nature</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Lost Nature</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="types-of-plant.html">Types</a></li>
+      <li><a href="search-plants.html" class="active">Search</a></li>
+      <li><a href="plant-care.html">Plant Care</a></li>
+      <li><a href="indoor-outdoor.html">Indoor vs Outdoor</a></li>
+    </ul>
+  </div> 
+</nav>
+
+<section class="section section-soft page-hero">
+  <p class="eyebrow">Smart Plant Discovery</p>
+  <h2>Find the right plant with search and a built-in assistant</h2>
+  <p class="hero-copy">
+    Search by name, care level, environment, or purpose. The assistant can also answer simple
+    questions like "Which plant is best for low light?" or "Suggest a medicinal plant for home."
+  </p>
+</section>
+
+<section class="section">
+  <div class="search-layout">
+    <div class="search-box search-experience">
+      <div class="search-header">
+        <h3>Plant Search</h3>
+        <p>Use live search, filters, or the assistant for quick suggestions.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="plantSearchInput">Search plants</label>
+        <input
+          type="text"
+          id="plantSearchInput"
+          class="search-input"
+          placeholder="Try: indoor, medicinal, flowering, balcony, low maintenance"
+        >
+      </div>
+
+      <div class="filter-grid">
+        <div class="form-group">
+          <label for="environmentFilter">Environment</label>
+          <select id="environmentFilter">
+            <option value="">Any environment</option>
+            <option value="Indoor">Indoor</option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Indoor/Outdoor">Indoor and Outdoor</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="careFilter">Care level</label>
+          <select id="careFilter">
+            <option value="">Any care level</option>
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="typeFilter">Plant type</label>
+          <select id="typeFilter">
+            <option value="">Any type</option>
+            <option value="Medicinal">Medicinal</option>
+            <option value="Indoor">Indoor</option>
+            <option value="Flowering">Flowering</option>
+            <option value="Air Purifying">Air Purifying</option>
+            <option value="Decorative">Decorative</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lightFilter">Light need</label>
+          <select id="lightFilter">
+            <option value="">Any light level</option>
+            <option value="Low">Low light</option>
+            <option value="Medium">Medium light</option>
+            <option value="Bright">Bright light</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-actions">
+        <button class="btn-primary" id="applyFiltersBtn" type="button">Show matches</button>
+        <button class="btn-secondary" id="resetFiltersBtn" type="button">Reset</button>
+      </div>
+
+      <div id="resultSummary" class="result-summary" aria-live="polite"></div>
+      <div id="searchResults" class="search-results-container"></div>
+    </div>
+
+    <aside class="assistant-panel" aria-labelledby="assistantHeading">
+      <div class="assistant-header">
+        <div>
+          <p class="assistant-kicker">Plant AI Assistant</p>
+          <h3 id="assistantHeading">Ask for a recommendation</h3>
+        </div>
+        <span class="assistant-status" id="assistantStatus">Checking connection</span>
+      </div>
+
+      <div id="assistantMessages" class="assistant-messages" aria-live="polite"></div>
+
+      <div class="quick-prompts">
+        <button type="button" class="prompt-chip" data-prompt="Suggest easy indoor plants">Easy indoor plants</button>
+        <button type="button" class="prompt-chip" data-prompt="Which plants are medicinal?">Medicinal plants</button>
+        <button type="button" class="prompt-chip" data-prompt="Best plants for low light rooms">Low light rooms</button>
+      </div>
+
+      <form id="assistantForm" class="assistant-form">
+        <label class="sr-only" for="assistantInput">Ask the plant assistant</label>
+        <input
+          id="assistantInput"
+          type="text"
+          placeholder="Ask about care, light, or the best plant for your space"
+        >
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="section-heading">
+    <p class="eyebrow">Recommended Matches</p>
+    <h2>Plants you can explore right now</h2>
+    <p>Click a card to ask the assistant about that plant.</p>
+  </div>
+
+  <div id="plantGrid" class="card-grid"></div>
+</section>
+
+<footer class="footer">
+  <p>"Nature does not hurry, yet everything is accomplished."</p>
+  <p>&copy; 2026 Lost Nature | Educational Project</p>
+</footer>
+
+<script>
+const plantDatabase = [
+  {
+    name: "Tulsi",
+    type: "Medicinal",
+    environment: "Indoor/Outdoor",
+    care: "Easy",
+    light: "Bright",
+    water: "Moderate watering",
+    size: "Small",
+    goodFor: ["home temple", "medicinal use", "balcony", "daily ritual"],
+    tags: ["tulsi", "holy basil", "medicinal", "balcony", "fragrant"],
+    description: "A medicinal and sacred herb that does well in sunny balconies and home gardens.",
+    image: "https://images.unsplash.com/photo-1632121055175-5b6f3ce77aee?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Aloe Vera",
+    type: "Medicinal",
+    environment: "Indoor",
+    care: "Easy",
+    light: "Bright",
+    water: "Low watering",
+    size: "Small",
+    goodFor: ["skin care", "sunny window", "beginners", "low watering"],
+    tags: ["aloe vera", "succulent", "medicinal", "indoor", "beginner"],
+    description: "A low-maintenance succulent that stores water and grows well near bright windows.",
+    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Snake Plant",
+    type: "Air Purifying",
+    environment: "Indoor",
+    care: "Easy",
+    light: "Low",
+    water: "Low watering",
+    size: "Medium",
+    goodFor: ["bedroom", "office", "low light", "air quality"],
+    tags: ["snake plant", "indoor", "low light", "air purifying", "easy"],
+    description: "A resilient indoor plant that tolerates low light and needs very little water.",
+    image: "https://images.unsplash.com/photo-1593691509543-c55fb32a36d5?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Money Plant",
+    type: "Decorative",
+    environment: "Indoor",
+    care: "Easy",
+    light: "Medium",
+    water: "Moderate watering",
+    size: "Medium",
+    goodFor: ["hanging pots", "shelves", "beginners", "decor"],
+    tags: ["money plant", "pothos", "vining", "decorative", "indoor"],
+    description: "A fast-growing trailing plant that is ideal for shelves, corners, and hanging planters.",
+    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Jasmine",
+    type: "Flowering",
+    environment: "Outdoor",
+    care: "Moderate",
+    light: "Bright",
+    water: "Regular watering",
+    size: "Medium",
+    goodFor: ["fragrance", "garden fence", "flowering corners", "pollinators"],
+    tags: ["jasmine", "flowering", "fragrant", "outdoor", "white flowers"],
+    description: "A fragrant flowering plant that thrives in bright outdoor areas with steady care.",
+    image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Rose",
+    type: "Flowering",
+    environment: "Outdoor",
+    care: "Moderate",
+    light: "Bright",
+    water: "Regular watering",
+    size: "Medium",
+    goodFor: ["flower beds", "gift plants", "sunny patios", "colorful gardens"],
+    tags: ["rose", "flowering", "outdoor", "colorful", "fragrant"],
+    description: "A classic flowering shrub for sunny spaces that rewards care with long blooming cycles.",
+    image: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Areca Palm",
+    type: "Indoor",
+    environment: "Indoor",
+    care: "Moderate",
+    light: "Medium",
+    water: "Moderate watering",
+    size: "Large",
+    goodFor: ["living room", "corners", "tropical look", "air freshness"],
+    tags: ["areca palm", "indoor", "decorative", "large", "air purifying"],
+    description: "A tall indoor palm that adds a tropical feel and works best in filtered bright light.",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Lavender",
+    type: "Flowering",
+    environment: "Indoor/Outdoor",
+    care: "Moderate",
+    light: "Bright",
+    water: "Low watering",
+    size: "Small",
+    goodFor: ["fragrance", "balcony", "pollinators", "relaxing spaces"],
+    tags: ["lavender", "fragrant", "flowering", "balcony", "herb"],
+    description: "A fragrant flowering herb that prefers bright sun, light soil, and careful watering.",
+    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+  }
+];
+
+const plantGrid = document.getElementById("plantGrid");
+const searchInput = document.getElementById("plantSearchInput");
+const environmentFilter = document.getElementById("environmentFilter");
+const careFilter = document.getElementById("careFilter");
+const typeFilter = document.getElementById("typeFilter");
+const lightFilter = document.getElementById("lightFilter");
+const resultSummary = document.getElementById("resultSummary");
+const searchResults = document.getElementById("searchResults");
+const assistantMessages = document.getElementById("assistantMessages");
+const assistantForm = document.getElementById("assistantForm");
+const assistantInput = document.getElementById("assistantInput");
+const assistantStatus = document.getElementById("assistantStatus");
+
+function setAssistantStatus(label, isOnline) {
+  assistantStatus.textContent = label;
+  assistantStatus.classList.toggle("is-online", Boolean(isOnline));
+}
+
+function getFilters() {
+  return {
+    query: searchInput.value.trim().toLowerCase(),
+    environment: environmentFilter.value,
+    care: careFilter.value,
+    type: typeFilter.value,
+    light: lightFilter.value
+  };
+}
+
+function plantMatchesFilters(plant, filters) {
+  const searchableText = [
+    plant.name,
+    plant.type,
+    plant.environment,
+    plant.care,
+    plant.light,
+    plant.water,
+    plant.description,
+    ...plant.tags,
+    ...plant.goodFor
+  ].join(" ").toLowerCase();
+
+  const matchesQuery = !filters.query || searchableText.includes(filters.query);
+  const matchesEnvironment = !filters.environment || plant.environment.includes(filters.environment);
+  const matchesCare = !filters.care || plant.care === filters.care;
+  const matchesType = !filters.type || plant.type === filters.type;
+  const matchesLight = !filters.light || plant.light === filters.light;
+
+  return matchesQuery && matchesEnvironment && matchesCare && matchesType && matchesLight;
+}
+
+function buildSearchInsights(plants) {
+  if (!plants.length) {
+    return '<p class="empty-state">No plants matched. Try removing one filter or asking the assistant for a recommendation.</p>';
+  }
+
+  return plants.slice(0, 4).map((plant) => `
+    <button type="button" class="search-result-item" data-plant-name="${plant.name}">
+      <strong>${plant.name}</strong>
+      <small>${plant.type} | ${plant.environment} | ${plant.care} care</small>
+    </button>
+  `).join("");
+}
+
+function renderPlantCards(plants) {
+  if (!plants.length) {
+    plantGrid.innerHTML = `
+      <article class="card empty-card">
+        <h3>No plants found</h3>
+        <p>Adjust the filters or ask the Plant AI Assistant for another suggestion.</p>
+      </article>
+    `;
+    return;
+  }
+
+  plantGrid.innerHTML = plants.map((plant) => `
+    <article class="card hover-lift plant-card" data-card-plant="${plant.name}">
+      <img class="card-img" src="${plant.image}" alt="${plant.name}" loading="lazy">
+      <h3>${plant.name}</h3>
+      <p>${plant.description}</p>
+      <div class="plant-meta">
+        <span class="plant-tag">${plant.type}</span>
+        <span class="plant-tag">${plant.environment}</span>
+        <span class="plant-tag">${plant.care} care</span>
+      </div>
+      <ul class="plant-facts">
+        <li><strong>Light:</strong> ${plant.light}</li>
+        <li><strong>Water:</strong> ${plant.water}</li>
+        <li><strong>Best for:</strong> ${plant.goodFor[0]}, ${plant.goodFor[1]}</li>
+      </ul>
+      <div class="plant-actions">
+        <button type="button" class="text-button" data-ask-plant="${plant.name}">Ask assistant</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function updateResults() {
+  const filters = getFilters();
+  const matches = plantDatabase.filter((plant) => plantMatchesFilters(plant, filters));
+
+  renderPlantCards(matches);
+  searchResults.innerHTML = buildSearchInsights(matches);
+  searchResults.classList.add("active");
+
+  if (!matches.length) {
+    resultSummary.textContent = "0 plants matched your search.";
+    return;
+  }
+
+  resultSummary.textContent = `${matches.length} plant${matches.length === 1 ? "" : "s"} matched your search.`;
+}
+
+function resetFilters() {
+  searchInput.value = "";
+  environmentFilter.value = "";
+  careFilter.value = "";
+  typeFilter.value = "";
+  lightFilter.value = "";
+  updateResults();
+}
+
+function findPlantsByIntent(message) {
+  const normalized = message.toLowerCase();
+
+  return plantDatabase.filter((plant) => {
+    const text = [
+      plant.name,
+      plant.type,
+      plant.environment,
+      plant.care,
+      plant.light,
+      plant.water,
+      plant.description,
+      ...plant.tags,
+      ...plant.goodFor
+    ].join(" ").toLowerCase();
+
+    return normalized.split(/\s+/).some((word) => word.length > 2 && text.includes(word));
+  });
+}
+
+function generateAssistantReply(message) {
+  const normalized = message.trim().toLowerCase();
+
+  if (!normalized) {
+    return "Ask for a plant by space, light, care level, or purpose.";
+  }
+
+  const exactPlant = plantDatabase.find((plant) => normalized.includes(plant.name.toLowerCase()));
+  if (exactPlant) {
+    return `${exactPlant.name} is a ${exactPlant.care.toLowerCase()}-care ${exactPlant.type.toLowerCase()} plant for ${exactPlant.environment.toLowerCase()} spaces. It prefers ${exactPlant.light.toLowerCase()} light and ${exactPlant.water.toLowerCase()}.`;
+  }
+
+  if (/\b(hello|hi|hey)\b/.test(normalized)) {
+    return "Tell me about your space and I will suggest plants that fit it.";
+  }
+
+  if (normalized.includes("low light")) {
+    return "For low light rooms, Snake Plant is the strongest option here. Money Plant can also work if it gets some indirect light.";
+  }
+
+  if (normalized.includes("medicinal")) {
+    return "Tulsi and Aloe Vera are the medicinal options in this collection. Tulsi is great for sunny balconies, while Aloe Vera suits bright indoor windows.";
+  }
+
+  if (normalized.includes("easy") || normalized.includes("beginner")) {
+    return "The easiest plants here are Aloe Vera, Snake Plant, Money Plant, and Tulsi. Snake Plant is the safest pick if you want low effort.";
+  }
+
+  const matches = findPlantsByIntent(message);
+  if (matches.length) {
+    const topMatches = matches.slice(0, 3).map((plant) => plant.name).join(", ");
+    return `You could start with ${topMatches}. If you want, I can narrow that down by sunlight, indoor or outdoor use, or care level.`;
+  }
+
+  return "Try asking for indoor plants, flowering plants, low light options, or medicinal plants.";
+}
+
+function addAssistantMessage(role, content) {
+  const messageEl = document.createElement("div");
+  messageEl.className = `assistant-bubble ${role}`;
+  messageEl.textContent = content;
+  assistantMessages.appendChild(messageEl);
+  assistantMessages.scrollTop = assistantMessages.scrollHeight;
+}
+
+function getAssistantContext() {
+  const filters = getFilters();
+  const visiblePlants = plantDatabase
+    .filter((plant) => plantMatchesFilters(plant, filters))
+    .slice(0, 5)
+    .map((plant) => plant.name);
+
+  return {
+    filters,
+    visiblePlants
+  };
+}
+
+async function fetchAssistantReply(message) {
+  try {
+    const response = await fetch("/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message,
+        context: getAssistantContext()
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (!data.reply) {
+      throw new Error("Missing reply");
+    }
+
+    setAssistantStatus("Online AI assistant", true);
+    return data.reply;
+  } catch (error) {
+    setAssistantStatus("Local fallback assistant", false);
+    return generateAssistantReply(message);
+  }
+}
+
+async function handleAssistantPrompt(message) {
+  addAssistantMessage("user", message);
+  const reply = await fetchAssistantReply(message);
+  addAssistantMessage("bot", reply);
+}
+
+document.getElementById("applyFiltersBtn").addEventListener("click", updateResults);
+document.getElementById("resetFiltersBtn").addEventListener("click", resetFilters);
+
+[searchInput, environmentFilter, careFilter, typeFilter, lightFilter].forEach((element) => {
+  element.addEventListener("input", updateResults);
+  element.addEventListener("change", updateResults);
+});
+
+assistantForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const message = assistantInput.value.trim();
+  if (!message) {
+    return;
+  }
+
+  await handleAssistantPrompt(message);
+  assistantInput.value = "";
+});
+
+document.querySelectorAll(".prompt-chip").forEach((button) => {
+  button.addEventListener("click", async () => {
+    await handleAssistantPrompt(button.dataset.prompt);
+  });
+});
+
+document.addEventListener("click", async (event) => {
+  const resultButton = event.target.closest("[data-plant-name]");
+  const askButton = event.target.closest("[data-ask-plant]");
+  const card = event.target.closest("[data-card-plant]");
+
+  if (askButton) {
+    await handleAssistantPrompt(`Tell me about ${askButton.dataset.askPlant}`);
+    return;
+  }
+
+  if (card) {
+    await handleAssistantPrompt(`Tell me about ${card.dataset.cardPlant}`);
+    return;
+  }
+
+  if (resultButton && resultButton.dataset.plantName) {
+    searchInput.value = resultButton.dataset.plantName;
+    updateResults();
+  }
+});
+
+setAssistantStatus("Local fallback assistant", false);
+addAssistantMessage("bot", "I can help you choose plants for indoor rooms, sunny balconies, low-light spaces, or medicinal use.");
+updateResults();
+</script>
+
+</body>
+</html>
