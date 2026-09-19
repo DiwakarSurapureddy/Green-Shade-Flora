@@ -1,9 +1,72 @@
 import { useEffect, useRef, useState } from 'react';
-import { Bot, Leaf, LoaderCircle, MessageCircle, Send, X, Minimize2 } from 'lucide-react';
+import { Bot, Leaf, LoaderCircle, MessageCircle, Send, X, Minimize2, Sparkles } from 'lucide-react';
 import { api } from '../services/api';
 import './PlantCareAI.css';
 
-const WELCOME_MESSAGE = 'Hello 👋\nI am Plant Care AI.\nAsk me about plants, gardening, watering, fertilizers, indoor plants, outdoor plants, or the Green Shade Flora nursery.';
+const WELCOME_MESSAGE = 'Hello 👋\nI am Plant Care AI for Green Shade Nursery.\nAsk me about any of our 200+ varieties of flowers, fruits, bonsai, and nursery plants, or how to care for them!';
+
+const SUGGESTIONS = [
+  '🌹 Rose plant',
+  '🥭 Mango tree',
+  '🪴 Ficus bonsai',
+  '🌸 Flower varieties',
+  '💧 How often to water?',
+];
+
+const parseInline = (text) => {
+  if (!text) return text;
+  const parts = [];
+  let lastIndex = 0;
+  const regex = /(\*\*(.*?)\*\*|\*(.*?)\*)/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    if (match[2]) {
+      parts.push(<strong key={match.index}>{match[2]}</strong>);
+    } else if (match[3]) {
+      parts.push(<em key={match.index}>{match[3]}</em>);
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  return parts.length ? parts : text;
+};
+
+const renderFormattedMessage = (content) => {
+  if (!content) return null;
+  const lines = content.split('\n');
+
+  return (
+    <div className="plant-care-ai__content-flow">
+      {lines.map((line, idx) => {
+        const trimmed = line.trim();
+        if (!trimmed) {
+          return <div key={idx} className="plant-care-ai__spacer" />;
+        }
+        if (trimmed.startsWith('### ')) {
+          return (
+            <h4 key={idx} className="plant-care-ai__heading">
+              {trimmed.replace('### ', '')}
+            </h4>
+          );
+        }
+        if (trimmed.startsWith('- ')) {
+          return (
+            <div key={idx} className="plant-care-ai__bullet">
+              <span className="plant-care-ai__bullet-dot">•</span>
+              <span>{parseInline(trimmed.replace('- ', ''))}</span>
+            </div>
+          );
+        }
+        return <p key={idx}>{parseInline(line)}</p>;
+      })}
+    </div>
+  );
+};
 
 export const PlantCareAI = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +82,8 @@ export const PlantCareAI = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const question = message.trim();
+  const sendQuery = async (queryText) => {
+    const question = queryText.trim();
     if (!question || isTyping) return;
 
     setMessage('');
@@ -51,6 +113,11 @@ export const PlantCareAI = () => {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendQuery(message);
+  };
+
   const toggleOpen = () => {
     setIsOpen((current) => !current);
     setIsMinimized(false);
@@ -65,7 +132,7 @@ export const PlantCareAI = () => {
               <span className="plant-care-ai__avatar"><Leaf size={21} strokeWidth={2.2} /></span>
               <div>
                 <strong>Plant Care AI</strong>
-                <span><i /> Green Shade Flora knowledge base</span>
+                <span><i /> Green Shade Nursery • 200+ Varieties</span>
               </div>
             </div>
             <div className="plant-care-ai__controls">
@@ -84,9 +151,28 @@ export const PlantCareAI = () => {
                 {messages.map((item) => (
                   <div className={`plant-care-ai__message plant-care-ai__message--${item.role}`} key={item.id}>
                     {item.role === 'assistant' && <Bot size={14} aria-hidden="true" />}
-                    <p>{item.content}</p>
+                    {renderFormattedMessage(item.content)}
                   </div>
                 ))}
+
+                {messages.length === 1 && !isTyping && (
+                  <div className="plant-care-ai__chips">
+                    <span className="plant-care-ai__chips-title"><Sparkles size={12} /> Popular queries:</span>
+                    <div className="plant-care-ai__chips-list">
+                      {SUGGESTIONS.map((s, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          className="plant-care-ai__chip"
+                          onClick={() => sendQuery(s.replace(/^[^\w\s]+/, '').trim())}
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {isTyping && (
                   <div className="plant-care-ai__message plant-care-ai__message--assistant plant-care-ai__typing">
                     <Bot size={14} aria-hidden="true" />
@@ -95,11 +181,12 @@ export const PlantCareAI = () => {
                 )}
                 <div ref={messagesEndRef} />
               </div>
+
               <form className="plant-care-ai__composer" onSubmit={handleSubmit}>
                 <input
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}
-                  placeholder="Ask about a plant..."
+                  placeholder="Ask about a plant (e.g., rose, mango, bonsai)..."
                   aria-label="Ask Plant Care AI a question"
                   maxLength={1000}
                   disabled={isTyping}
@@ -121,4 +208,4 @@ export const PlantCareAI = () => {
   );
 };
 
-export default PlantCareAI;
+export default PlantCareAI;

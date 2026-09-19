@@ -131,7 +131,7 @@ export const App = () => {
           />
         );
       case 'about':
-        return <About setActivePage={setActivePage} />;
+        return <About setActivePage={setActivePage} setSelectedCategory={setSelectedCategory} />;
       case 'services':
         return <Services setActivePage={setActivePage} />;
       case 'contact':

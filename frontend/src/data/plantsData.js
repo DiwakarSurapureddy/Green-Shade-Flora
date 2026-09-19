@@ -618,7 +618,7 @@ export const BUSINESS_INFO = {
     indiamart: "https://www.indiamart.com/green-shade-nursery/profile.html",
     googleMaps: "https://maps.app.goo.gl/VLhAsdzmJZF7w7Wq7?g_st=ac"
   },
-  story: "Founded in 1997 by Surapreddy Rama Krishna, Green Shade Nursery is one of the most trusted plant growers based in Kadiyam Savaram, Andhra Pradesh — India's plant nursery hub. Over the past 29 years, Surapreddy Rama Krishna and his team have built a reputation for genuine horticultural expertise, healthy acclimatized saplings, and dependable customer service.",
+  story: "Founded in 1997 by Surapureddy Rama Krishna, Green Shade Nursery is one of the most trusted plant growers based in Kadiyapu Savaram, Andhra Pradesh — India's plant nursery hub. Over the past 29 years, Surapureddy Rama Krishna and his team have built a reputation for genuine horticultural expertise, healthy acclimatized saplings, and dependable customer service.",
   capabilities: [
     {
       title: "Retail Sales for Home Gardeners",
