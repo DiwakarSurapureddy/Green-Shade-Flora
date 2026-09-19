@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useGreenCart } from '../context/GreenCartContext';
 import { BUSINESS_INFO, CATEGORIES, PLANTS_DATA } from '../data/plantsData';
 import { PlantCard } from '../components/PlantCard';
@@ -38,6 +38,41 @@ export const Home = ({ setActivePage, setSelectedCategory, onSelectPlant }) => {
     if (setActivePage) setActivePage('plants');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const [isTrustVisible, setIsTrustVisible] = useState(false);
+  const trustSectionRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setIsTrustVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTrustVisible(true);
+        } else if (entry.boundingClientRect.top > 0) {
+          // Reset when scrolled back up above the section
+          setIsTrustVisible(false);
+        }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -30px 0px'
+      }
+    );
+
+    const target = trustSectionRef.current;
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) observer.unobserve(target);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="home-page-root">
@@ -154,7 +189,11 @@ export const Home = ({ setActivePage, setSelectedCategory, onSelectPlant }) => {
           - Locally Acclimatized Plants
           - Retail & B2B Supply
       ========================================================================= */}
-      <section className="business-trust-section" aria-label="Business Credentials">
+      <section 
+        ref={trustSectionRef} 
+        className="business-trust-section" 
+        aria-label="Business Credentials"
+      >
         <div className="container">
           <div className="section-header-centered">
             <span className="section-sub-badge">Why Plant Buyers Trust Us</span>
@@ -164,7 +203,7 @@ export const Home = ({ setActivePage, setSelectedCategory, onSelectPlant }) => {
             </p>
           </div>
 
-          <div className="trust-cards-grid">
+          <div className={`trust-cards-grid ${isTrustVisible ? 'is-animated' : ''}`}>
             {/* Card 1: Established 1997 */}
             <div className="trust-feature-card">
               <div className="trust-icon-box">

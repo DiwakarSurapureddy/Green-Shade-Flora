@@ -536,7 +536,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "High-Density Orchards, Kitchen Gardens, Farmhouse Fencing",
     description: "Heavy bearing, crispy and sweet fruit weighing 300g to 700g each. Begins flowering and yielding fruit within the first 12 months after planting.",
-    image: "https://images.unsplash.com/photo-1536511135899-734f41b3d633?auto=format&fit=crop&w=900&q=80",
+    image: "https://bonsaiplantsnursery.com/wp-content/uploads/2020/02/taiwan-pink-guava-plants-1545482354-4588337.jpeg",
     features: ["Fruits within 1 year", "Crisp large aromatic guavas", "Excellent for high density plantations"]
   },
   {
@@ -554,13 +554,13 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Terrace Garden Containers, Backyard Kitchen Gardens, Citrus Groves",
     description: "Prolific all-year (Baramasi) fruiting variety. Thin skin, abundant aromatic juice, and minimal to zero seeds. Very high pest resistance.",
-    image: "https://images.unsplash.com/photo-1587496679742-bad502958fbe?auto=format&fit=crop&w=900&q=80",
+    image: "https://m.media-amazon.com/images/I/71XgE5zspsL._SY879_.jpg",
     features: ["Continuous year-round fruiting", "Extra juicy thin skin", "Thrives in large terrace pots & ground"]
   },
   {
-    id: "kashmiri-apple-ber",
-    name: "Kashmiri Red Apple Ber (Grafted Jujube)",
-    botanicalName: "Ziziphus mauritiana 'Apple Ber'",
+    id: "Red lazy papaya plant",
+    name: "papaya plant",
+    botanicalName: "Carica papaya 'Red Lady'",
     category: "fruit",
     categoryLabel: "Grafted Fruit Saplings",
     environment: "Full Arid / Tropical Sun",
@@ -572,12 +572,12 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Arid Land Farming, Farmhouses, Commercial Harvest",
     description: "Produces crisp, succulent fruits resembling miniature red apples with sweet flavour. Enormously productive crop requiring minimal water.",
-    image: "https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=900&q=80",
+    image: "https://5.imimg.com/data5/SELLER/Default/2025/5/507845972/BZ/HY/MA/184924762/image-a5bc8924-acda-4f0c-9df6-e4-500x500.jpg",
     features: ["Resembles crisp sweet miniature apples", "Extreme drought and heat tolerance", "Bumper yields from season 1"]
   },
   {
-    id: "sapota-cricket-ball",
-    name: "Cricket Ball Sapota / Chiku (Grafted Layered)",
+    id: "sapota-",
+    name: " Sapota / Chiku (Grafted Layered)",
     botanicalName: "Manilkara zapota",
     category: "fruit",
     categoryLabel: "Grafted Fruit Saplings",
@@ -590,7 +590,7 @@ export const PLANTS_DATA = [
     acclimatization: "100% Acclimatized in Kadiyapu Savaram grounds",
     suitability: "Commercial Orchards, Long-term Farm Investment, Large Gardens",
     description: "Large round fruits with sweet caramel-brown pulp. Hardy tree with long lifespan and dependable multi-season yields.",
-    image: "https://images.unsplash.com/photo-1596728325488-8255474384d0?auto=format&fit=crop&w=900&q=80",
+    image: "https://m.media-amazon.com/images/I/51RJr9uZ-8L._SY879_.jpg",
     features: ["Extra large round sweet fruit", "Long lifespan (50+ years)", "Sturdy Godavari delta rootstock"]
   }
 ];
